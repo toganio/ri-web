@@ -18,7 +18,7 @@ _Son güncelleme: 2026-11-01 00:03 (Türkiye saati) — claude.ai/code bulut otu
 
 ## Sıradaki adım
 1. Arşiv kopyalarından 1, 2, 3 ve 7. filmlerin içeriği.
-2. Önizleme kanalları (PR açılınca her tasarım ayrı kanala gider).
+2. Seçilen tasarım varsayılan yapılır, PR birleşir, canlı yayın; sonra recepivedik.com bağlanır (e-posta MX satırlarına dokunmadan).
 
 ## Togan'dan beklenen
 - Tasarım seçimi: Seri ya da Kahkaha (önerim Seri).

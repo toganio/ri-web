@@ -13,7 +13,7 @@ _Son güncelleme: 2026-10-31 22:50 (Türkiye saati) — claude.ai/code bulut otu
 - Internet Archive kopyalarını indiren iş akışı (`eski-site-arsivi.yml`, sürüm `eski-site-wayback`).
 
 ## Şu an açık iş
-- Dal `claude/project-thread-utmr6q` (PR henüz yok).
+- Dal `claude/project-thread-utmr6q`, taslak PR #1 (önizleme anahtar gelince taslaktan çıkar).
 
 ## Sıradaki adım
 1. Arşiv kopyalarından 1, 2, 3 ve 7. filmlerin içeriği.
@@ -22,4 +22,4 @@ _Son güncelleme: 2026-10-31 22:50 (Türkiye saati) — claude.ai/code bulut otu
 ## Togan'dan beklenen
 - Firebase yükleme anahtarı: camasirhanefilm-web projesindeki githubdeploy hesabına yeni JSON anahtar,
   `FIREBASE_SERVICE_ACCOUNT` adıyla ri-web ve sg-web depolarına (tek anahtar iki depo).
-- Tasarım seçimi (önizleme hazır olunca).
+- Tasarım seçimi: Seri ya da Kahkaha (ekran görüntüleri 2026-10-31 23:47 TR gönderildi; önerim Seri).

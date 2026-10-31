@@ -1,11 +1,10 @@
 # recepivedik.com'un Internet Archive kopyalarını indirir ve "eski-site-wayback" sürümüne (release) koyar.
 # Neden: 1, 2, 3 ve 7. filmlerin içeriği bugünkü sitede yok; eski kopyalardan yalnız veri alınacak
-# (Togan, 2026-10-31). Zorunlu kontrol değildir; yalnız bu dosya ya da betik değişince ve elle koşar.
+# (Togan, 2026-10-31). Zorunlu kontrol değildir; yalnız elle koşar (Actions → "Eski site arşivi" → Run workflow).
+# Arşiv 2026-10-31'de alındı. Push tetikleyicisi kaldırıldı: arka arkaya iki koşuda ikincisi arşiv servisinin
+# sınırına takılıp kırmızı kalıyordu (koşu 41241265998), üstelik arşiv bir kez alınınca yeniden almak gerekmez.
 name: Eski site arşivi
 on:
-  push:
-    branches: ['claude/**']
-    paths: ['.github/workflows/eski-site-arsivi.yml', 'scripts/wayback.py']
   workflow_dispatch:
 permissions:
   contents: write

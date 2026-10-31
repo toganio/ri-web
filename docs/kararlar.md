@@ -33,3 +33,4 @@
 - Firebase: yeni proje açılmadı; camasirhanefilm-web projesinde ayrı site (`recepivedik`). Yükleme hesabı aynı
   (githubdeploy); anahtar Togan tarafından GitHub sırrına konur, depoda tutulmaz.
 - Recep İvedik 8 TMDB'de duyurulmuş (konu yok); Togan'ın kararı 1–7 olduğu için eklenmedi.
+- 2026-10-31: Togan `FIREBASE_SERVICE_ACCOUNT` sırrını ri-web ve sg-web'e ekledi (tek anahtar). Firebase sitesi `recepivedik` ilk yayında açıldı.

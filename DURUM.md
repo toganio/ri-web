@@ -1,9 +1,10 @@
 # DURUM — kaldığımız yer
 
-_Son güncelleme: 2026-10-31 22:50 (Türkiye saati) — claude.ai/code bulut oturumu_
+_Son güncelleme: 2026-11-01 00:03 (Türkiye saati) — claude.ai/code bulut oturumu_
 
 ## Canlı
-- Yeni site henüz yok. Bugünkü site: http://recepivedik.com (GoDaddy, 2019'dan beri değişmemiş, https sertifikası bozuk).
+- Yeni site henüz yok. Önizlemeler (PR #1, 2026-11-07'ye kadar): Seri https://recepivedik--pr-1-seri-lhiq9jca.web.app ,
+  Kahkaha https://recepivedik--pr-1-kahkaha-mufyxcem.web.app (yedi film sayfası 200, ölçüldü). Bugünkü site: http://recepivedik.com (GoDaddy, 2019'dan beri değişmemiş, https sertifikası bozuk).
 
 ## Son yapılan
 - Bugünkü sitenin içeriği incelendi (bkz. `docs/kararlar.md`).
@@ -13,13 +14,11 @@ _Son güncelleme: 2026-10-31 22:50 (Türkiye saati) — claude.ai/code bulut otu
 - Internet Archive kopyalarını indiren iş akışı (`eski-site-arsivi.yml`, sürüm `eski-site-wayback`).
 
 ## Şu an açık iş
-- Dal `claude/project-thread-utmr6q`, taslak PR #1 (önizleme anahtar gelince taslaktan çıkar).
+- Dal `claude/project-thread-utmr6q`, PR #1 (testler yeşil). Birleştirme tasarım seçimi ve 1-2-3-7 içeriğinden sonra.
 
 ## Sıradaki adım
 1. Arşiv kopyalarından 1, 2, 3 ve 7. filmlerin içeriği.
 2. Önizleme kanalları (PR açılınca her tasarım ayrı kanala gider).
 
 ## Togan'dan beklenen
-- Firebase yükleme anahtarı: camasirhanefilm-web projesindeki githubdeploy hesabına yeni JSON anahtar,
-  `FIREBASE_SERVICE_ACCOUNT` adıyla ri-web ve sg-web depolarına (tek anahtar iki depo).
-- Tasarım seçimi: Seri ya da Kahkaha (ekran görüntüleri 2026-10-31 23:47 TR gönderildi; önerim Seri).
+- Tasarım seçimi: Seri ya da Kahkaha (önerim Seri).

@@ -1,4 +1,4 @@
-// Ortak davranışlar: tıklayınca yüklenen YouTube, fotoğraf büyütme, kaydırınca beliren öğeler, menü.
+// Ortak davranışlar: tıklayınca yüklenen YouTube, fotoğraf büyütme, kaydırınca beliren öğeler, paralaks.
 // Satır içi betik yok (CSP); her şey bu dosyada.
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -125,32 +125,6 @@
   addEventListener('scroll', setScroll, { passive: true });
   setScroll();
 
-  // Arkada sessiz oynayan fragman (kontrolsüz, döngüde). Video yalnız gerçekten oynamaya başlayınca belirir;
-  // oynamazsa zemin olduğu gibi kalır. Hareket azaltma ya da veri tasarrufu açıksa hiç yüklenmez.
-  const quiet = reduce || (navigator.connection && navigator.connection.saveData);
-  const YT = 'https://www.youtube-nocookie.com';
-  document.querySelectorAll('[data-bgvideo]').forEach((el) => {
-    const box = el.querySelector('.bg-video');
-    const id = el.dataset.bgvideo;
-    if (quiet || !box || !id) return;
-    const f = document.createElement('iframe');
-    f.src = `${YT}/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&loop=1&playlist=${encodeURIComponent(id)}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
-    f.title = '';
-    f.tabIndex = -1;
-    f.allow = 'autoplay; encrypted-media';
-    f.addEventListener('load', () => f.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), YT));
-    box.replaceChildren(f);
-  });
-  addEventListener('message', (e) => {
-    if (e.origin !== YT || typeof e.data !== 'string') return;
-    let d;
-    try { d = JSON.parse(e.data); } catch { return; }
-    if (!d.info || d.info.playerState !== 1) return;
-    document.querySelectorAll('.bg-video iframe').forEach((f) => {
-      if (f.contentWindow === e.source) setTimeout(() => f.classList.add('on'), 500);
-    });
-  });
-
   // İmlece göre hafif eğilen sahne (data-tilt): --mx, --my (-1 … 1).
   const tilt = document.querySelector('[data-tilt]');
   if (tilt && matchMedia('(hover: hover)').matches && !reduce) {
@@ -181,48 +155,5 @@
       { rootMargin: '-45% 0px -45% 0px' },
     );
     spied.forEach((el) => io2.observe(el));
-  }
-
-  // Menü düğmesi (telefon).
-  const tg = document.querySelector('.menu-toggle');
-  if (tg)
-    tg.addEventListener('click', () => {
-      const open = document.body.classList.toggle('menu-open');
-      tg.setAttribute('aria-expanded', open);
-    });
-
-  // Yatay film şeridi: tekerlek ile yatay kaydırma (masaüstü) ve ok düğmeleri.
-  document.querySelectorAll('[data-rail]').forEach((rail) => {
-    const wrap = rail.closest('.rail-wrap');
-    wrap?.querySelector('.rail-prev')?.addEventListener('click', () => rail.scrollBy({ left: -rail.clientWidth * 0.8, behavior: 'smooth' }));
-    wrap?.querySelector('.rail-next')?.addEventListener('click', () => rail.scrollBy({ left: rail.clientWidth * 0.8, behavior: 'smooth' }));
-  });
-
-  // İmleci izleyen afiş (masaüstü, data-follow içeren listelerde).
-  const follow = document.querySelector('[data-follow]');
-  if (follow && matchMedia('(hover: hover)').matches && !reduce) {
-    const ghost = document.createElement('div');
-    ghost.className = 'follow-ghost';
-    document.body.append(ghost);
-    let tx = 0, ty = 0, x = 0, y = 0, on = false;
-    follow.querySelectorAll('[data-poster]').forEach((row) => {
-      row.addEventListener('mouseenter', () => {
-        ghost.style.backgroundImage = `url("${row.dataset.poster}")`;
-        ghost.classList.add('on');
-        on = true;
-      });
-      row.addEventListener('mouseleave', () => {
-        ghost.classList.remove('on');
-        on = false;
-      });
-    });
-    addEventListener('mousemove', (e) => ((tx = e.clientX), (ty = e.clientY)), { passive: true });
-    const loop = () => {
-      x += (tx - x) * 0.15;
-      y += (ty - y) * 0.15;
-      if (on) ghost.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%) rotate(${(tx - x) * 0.05}deg)`;
-      requestAnimationFrame(loop);
-    };
-    loop();
   }
 })();

@@ -1,6 +1,6 @@
 // Statik site üretici: content/filmler.json → dist/
 // Bağımlılık yok; `node scripts/build.mjs` birkaç saniyede biter.
-// Tasarım seçimi: THEME=<ad> (varsayılan aşağıda). Her tasarımın sayfa düzeni scripts/themes/<ad>.mjs,
+// Tasarım: THEME=<ad> (varsayılan "seri", Togan 2026-10-31'de seçti). Sayfa düzeni scripts/themes/<ad>.mjs,
 // görünümü assets/themes/<ad>.css dosyasındadır. Görünür metin yalnız içerik dosyasından gelir.
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -9,7 +9,6 @@ import { createHash } from 'node:crypto';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
-export const THEMES = ['seri', 'kahkaha'];
 const THEME = process.env.THEME || 'seri';
 const theme = (await import(`./themes/${THEME}.mjs`)).default;
 const c = JSON.parse(readFileSync(join(ROOT, 'content', 'filmler.json'), 'utf8'));
@@ -87,7 +86,7 @@ function page({ title, description, body, path, bodyClass = '' }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonical}">
-<meta name="theme-color" content="#0d0d0d">
+<meta name="theme-color" content="#fffaf2">
 ${theme.fonts || ''}
 <link rel="stylesheet" href="/assets/base.css?v=${VERSION}">
 <link rel="stylesheet" href="/assets/themes/${THEME}.css?v=${VERSION}">

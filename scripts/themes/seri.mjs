@@ -1,4 +1,4 @@
-// Tasarım "Seri": koyu, sinema havası. Ana sayfada yelpaze gibi açılan yedi afiş ve dev başlık,
+// Tasarım "Seri": açık ve renkli (Togan 2026-10-31: "daha renkli, light ve fresh"). Ana sayfada yelpaze gibi açılan yedi afiş ve dev başlık,
 // ardından her film kendi numarasıyla tam ekran bir bölüm. Film sayfasında dev numara, afiş, fragman,
 // hikaye, künye ve galeri. Her filmin rengi afişinden: assets/themes/seri.css → .t1 … .t7.
 // CSP satır içi stile izin vermez; değişkenler sınıflarla verilir.
@@ -41,16 +41,14 @@ const letters = (s) => {
 export default {
   fonts:
     '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
-    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap">',
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap">',
 
   home(p) {
     const newest = [...p.films].reverse();
-    const trailer = newest.find((f) => f.videos?.length);
     return `${header(p)}
 <main id="icerik">
-  <section class="hero" data-tilt data-bgvideo="${trailer ? p.esc(trailer.videos[0].youtube) : ''}">
-    <div class="bg-video" aria-hidden="true"></div>
-    <div class="shade" aria-hidden="true"></div>
+  <section class="hero" data-tilt>
+    <div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="deck" aria-hidden="true">
       ${p.films.map((f, i) => `<div class="card t${f.no}">${p.img(f.poster, '', '', ' fetchpriority="high"')}</div>`).join('\n      ')}
     </div>
@@ -110,9 +108,7 @@ ${footer(p)}`;
   </section>`);
     return `${header(p, f)}
 <main id="icerik" class="t${f.no}">
-  <section class="film-hero" data-bgvideo="${f.videos?.length ? p.esc(f.videos[0].youtube) : ''}">
-    <div class="bg-video" aria-hidden="true"></div>
-    <div class="shade" aria-hidden="true"></div>
+  <section class="film-hero">
     <span class="num" data-speed="-80" aria-hidden="true">${f.no}</span>
     <div class="film-title">
       <p class="year">${p.esc(p.up(f.release || String(f.year)))}</p>

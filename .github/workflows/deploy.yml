@@ -40,10 +40,6 @@ jobs:
       contents: read
       checks: write
       pull-requests: write
-    strategy:
-      fail-fast: false
-      matrix:
-        theme: ${{ fromJSON(github.event_name == 'pull_request' && '["seri","kahkaha"]' || '["varsayilan"]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -51,8 +47,6 @@ jobs:
           node-version: 22
       - name: Derle
         run: node scripts/build.mjs
-        env:
-          THEME: ${{ matrix.theme != 'varsayilan' && matrix.theme || '' }}
       - id: sir
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
@@ -81,5 +75,6 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ env.FIREBASE_SA_JSON }}
           projectId: camasirhanefilm-web
-          channelId: ${{ github.event_name == 'pull_request' && format('pr-{0}-{1}', github.event.number, matrix.theme) || 'live' }}
+          # Önizleme adı tasarım seçimi sırasında "pr-N-seri" idi; adres değişmesin diye korunur.
+          channelId: ${{ github.event_name == 'pull_request' && format('pr-{0}-seri', github.event.number) || 'live' }}
           expires: 7d

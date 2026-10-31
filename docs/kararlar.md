@@ -34,3 +34,7 @@
   (githubdeploy); anahtar Togan tarafından GitHub sırrına konur, depoda tutulmaz.
 - Recep İvedik 8 TMDB'de duyurulmuş (konu yok); Togan'ın kararı 1–7 olduğu için eklenmedi.
 - 2026-10-31: Togan `FIREBASE_SERVICE_ACCOUNT` sırrını ri-web ve sg-web'e ekledi (tek anahtar). Firebase sitesi `recepivedik` ilk yayında açıldı.
+- 2026-10-31: Togan Seri'yi seçti: *"1. tasarım güzel ama çok siyah ve koyu olmuş, daha renkli, light ve fresh"*. Seri açık
+  ve renkli yapıldı: krem zemin, her filme kendi canlı rengi (`.t1`…`.t7`), bölümler filmin açık renginde, dev numara afişin
+  arkasında. Açık zeminde soluk kaldığı için arkada sessiz oynayan fragman kaldırıldı (fragmanlar film sayfasında tıklayınca
+  oynar). Kahkaha tasarımı ve ona özel kod silindi; önizleme adresi `pr-N-seri` olarak kaldı.

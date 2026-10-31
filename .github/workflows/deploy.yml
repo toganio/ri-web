@@ -1,0 +1,67 @@
+# Firebase Hosting: PR'da her tasarım ayrı önizleme kanalına, main'de seçili tasarım canlıya.
+# Proje camasirhanefilm-web, site adı firebase.json'da ("recepivedik"; yoksa ilk koşuda açılır).
+# Gereken sır: FIREBASE_SERVICE_ACCOUNT (yoksa yayın adımı atlanır).
+name: Deploy
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+jobs:
+  deploy:
+    if: github.event.pull_request.draft != true && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    # Sır kullandığı için GitHub makinesinde kalır.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        theme: ${{ fromJSON(github.event_name == 'pull_request' && '["seri","kahkaha"]' || '["varsayilan"]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - if: matrix.theme != 'varsayilan'
+        run: node scripts/build.mjs
+        env:
+          THEME: ${{ matrix.theme }}
+      - id: sir
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        # Elle yapıştırılan anahtarda satır sonları bozulabiliyor; JSON gevşek okunup tek satıra çevrilir.
+        run: |
+          if [ -z "$SA" ]; then echo "::notice::FIREBASE_SERVICE_ACCOUNT yok, yayın atlandı"; exit 0; fi
+          SA_JSON=$(python3 -c 'import json,os; print(json.dumps(json.loads(os.environ["SA"], strict=False)))')
+          echo "::add-mask::$SA_JSON"
+          echo "FIREBASE_SA_JSON=$SA_JSON" >> "$GITHUB_ENV"
+          echo "var=1" >> "$GITHUB_OUTPUT"
+      - name: Firebase sitesi yoksa aç
+        if: steps.sir.outputs.var == '1'
+        run: |
+          SITE=$(node -p "require('./firebase.json').hosting.site")
+          umask 077; printf '%s' "$FIREBASE_SA_JSON" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          if npx -y firebase-tools@13 hosting:sites:get "$SITE" --project camasirhanefilm-web >/dev/null 2>&1; then
+            echo "site var: $SITE"
+          else
+            npx -y firebase-tools@13 hosting:sites:create "$SITE" --project camasirhanefilm-web
+          fi
+          rm -f "$RUNNER_TEMP/sa.json"
+      - if: steps.sir.outputs.var == '1'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ env.FIREBASE_SA_JSON }}
+          projectId: camasirhanefilm-web
+          channelId: ${{ github.event_name == 'pull_request' && format('pr-{0}-{1}', github.event.number, matrix.theme) || 'live' }}
+          expires: 7d

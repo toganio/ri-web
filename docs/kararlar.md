@@ -17,3 +17,16 @@
 ## Teknik (ajan)
 - Depo boştu; ilk commit (yalnız kural ve durum dosyaları) `main`'e doğrudan yazıldı, çünkü boş depoda PR açılacak
   temel dal yoktu. Sonraki her iş PR ile.
+
+## 2026-10-31 — İçerik kaynakları ve tasarım (ajan)
+- Togan: *"dünya klasmanında bi tasarım yap"*. İki aday, sıfırdan: **Seri** (koyu zemin, yelpaze gibi açılan yedi afiş,
+  dev numaralı film bölümleri, arkada sessiz fragman) ve **Kahkaha** (açık zemin, çıkartma afişler, dönen rozet, dev film satırları).
+  Eski sitenin düzeni, renkleri, arka plan görselleri ve logosu kullanılmadı.
+- 4, 5, 6: metin ve fotoğraflar recepivedik.com'dan. Eski sitedeki yatay "afiş" görselleri (1600x810) aslında sayfa arka
+  planıydı, tasarım sayıldığı için alınmadı. RI4 künyesi eski sitede resimdi (`kunye.png`), yazıya geçirildi
+  (`tests/kaynak/recepivedik.com_recep-ivedik-4_kunye.txt`). Eksik künye satırları ve oyuncu rolleri camasirhanefilm.com'dan.
+- Dikey afişler TMDB'den (780x1170), eski sitedeki afişler daha küçüktü.
+- Yazım düzeltmeleri: "MİKYAJ" → "MİKSAJ", "kulanmaktadırlar" → "kullanmaktadırlar" (testte `DUZELTME` listesi).
+- Firebase: yeni proje açılmadı; camasirhanefilm-web projesinde ayrı site (`recepivedik`). Yükleme hesabı aynı
+  (githubdeploy); anahtar Togan tarafından GitHub sırrına konur, depoda tutulmaz.
+- Recep İvedik 8 TMDB'de duyurulmuş (konu yok); Togan'ın kararı 1–7 olduğu için eklenmedi.

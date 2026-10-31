@@ -7,10 +7,19 @@ _Son güncelleme: 2026-10-31 22:50 (Türkiye saati) — claude.ai/code bulut otu
 
 ## Son yapılan
 - Bugünkü sitenin içeriği incelendi (bkz. `docs/kararlar.md`).
+- Bağımlılıksız statik üretici (`scripts/build.mjs`), iki tasarım adayı: Seri (koyu, sinema) ve Kahkaha (açık, pop).
+- 4, 5, 6. filmlerin metni, künyesi, fragmanları, afişleri ve fotoğrafları (`content/filmler.json`, `img/`).
+- İçerik testi `tests/icerik.test.mjs`: her metin `tests/kaynak/` altındaki eski sayfalarda geçmeli.
+- Internet Archive kopyalarını indiren iş akışı (`eski-site-arsivi.yml`, sürüm `eski-site-wayback`).
+
+## Şu an açık iş
+- Dal `claude/project-thread-utmr6q` (PR henüz yok).
 
 ## Sıradaki adım
-1. Eski sitenin arşiv kopyalarından 1, 2, 3 ve 7. filmlerin içeriğini toplamak.
-2. Tasarım adayları (sıfırdan) ve önizleme.
+1. Arşiv kopyalarından 1, 2, 3 ve 7. filmlerin içeriği.
+2. Önizleme kanalları (PR açılınca her tasarım ayrı kanala gider).
 
 ## Togan'dan beklenen
-- Şimdilik yok.
+- Firebase yükleme anahtarı: camasirhanefilm-web projesindeki githubdeploy hesabına yeni JSON anahtar,
+  `FIREBASE_SERVICE_ACCOUNT` adıyla ri-web ve sg-web depolarına (tek anahtar iki depo).
+- Tasarım seçimi (önizleme hazır olunca).

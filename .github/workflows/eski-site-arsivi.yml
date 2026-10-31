@@ -16,7 +16,7 @@ jobs:
   arsiv:
     # Sürüm (release) yazdığı için GitHub makinesinde kalır.
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
     env:
       ETIKET: eski-site-wayback
     steps:

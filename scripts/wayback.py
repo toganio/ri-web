@@ -12,14 +12,15 @@ UA = {"User-Agent": "ri-web-arsiv/1.0 (github.com/toganio/ri-web)"}
 MAX_TOTAL = 1500 * 1024 * 1024
 MAX_FILE = 40 * 1024 * 1024
 MAX_PER_URL = 6  # bir adresin en fazla kaç farklı içerik sürümü alınır
+DEADLINE = time.time() + 45 * 60  # iş süre sınırına takılmasın: 45 dakikada indirme durur, eldeki paketlenir
 SKIP_MIME = ("video/", "audio/")
 SKIP_EXT = (".flv", ".mp4", ".mov", ".avi", ".wmv", ".mp3", ".zip", ".rar", ".exe")
 
 
-def get(url, tries=5):
+def get(url, tries=3):
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40) as r:
                 return r.read(MAX_FILE + 1)
         except Exception as e:  # noqa: BLE001
             if getattr(e, "code", None) == 404:
@@ -105,9 +106,15 @@ def main():
         picked.extend(rs)
     print("indirilecek:", len(picked), "farkli adres:", len(seen))
     total, ozet, liste = 0, [], []
-    for r in sorted(picked, key=lambda r: (r["timestamp"], r["original"])):
+    # Önce metin taşıyan dosyalar (sayfa, xml, txt, swf), sonra görseller: süre biterse metin elde kalır.
+    def textual(r):
+        m, low = r["mimetype"], r["original"].lower()
+        return 0 if ("html" in m or "xml" in m or "text" in m or "json" in m or "flash" in m or low.endswith((".swf", ".xml", ".txt"))) else 1
+    for r in sorted(picked, key=lambda r: (textual(r), r["timestamp"], r["original"])):
         if total > MAX_TOTAL:
             print("boyut siniri doldu"); break
+        if time.time() > DEADLINE:
+            print("sure siniri doldu, kalan atlandi"); break
         b = get(f"https://web.archive.org/web/{r['timestamp']}id_/{r['original']}")
         if not b or len(b) > MAX_FILE:
             continue
@@ -127,7 +134,9 @@ def main():
             text = swf_strings(b)
         if text and len(text) > 20:
             ozet.append(f"\n===== {r['timestamp']} {r['original']} ({m})\n{text[:20000]}")
-        time.sleep(0.3)
+        time.sleep(0.1)
+        if len(liste) % 100 == 0:
+            print(f"{len(liste)} dosya, {total/1e6:.1f} MB", flush=True)
     with open(os.path.join(OUT, "liste.tsv"), "w") as f:
         f.write("\n".join(liste) + "\n")
     with open(os.path.join(OUT, "ozet.txt"), "w") as f:

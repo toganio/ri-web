@@ -38,3 +38,8 @@
   ve renkli yapıldı: krem zemin, her filme kendi canlı rengi (`.t1`…`.t7`), bölümler filmin açık renginde, dev numara afişin
   arkasında. Açık zeminde soluk kaldığı için arkada sessiz oynayan fragman kaldırıldı (fragmanlar film sayfasında tıklayınca
   oynar). Kahkaha tasarımı ve ona özel kod silindi; önizleme adresi `pr-N-seri` olarak kaldı.
+- 2026-11-01: 1, 2, 3 ve 7. filmlerin hikaye ve künyesi ne bugünkü sitede ne Internet Archive kopyalarında var (arşivde
+  2009'dan yalnız reklamlı "Recep İvedik 2 burada" giriş sayfaları, 2014 sonrası yalnız RI4-5-6). Togan'a soruldu; önerilen
+  yol uygulandı: künye (oyuncu-rol, yönetmen, yapımcı, senaryo, görüntü, kurgu, müzik, yapım şirketi, süre/vizyon tarihi)
+  Türkçe Vikipedi'den, kaynak vikimetni `tests/kaynak/tr.wikipedia.org_*.txt`. Hikaye yazısı uydurulmaz, Togan'dan beklenir.
+  RI1 vizyon tarihi Vikipedi'de çelişkili (21 ve 22 Şubat 2008), yazılmadı. RI7 Disney+'ta yayımlandı (9 Aralık 2022).

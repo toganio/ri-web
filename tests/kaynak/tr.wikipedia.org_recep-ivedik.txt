@@ -1,0 +1,200 @@
+Kaynak: https://tr.wikipedia.org/wiki/Recep_İvedik_(film) (sayfanın vikimetni, alındı 2026-10-31). Vikipedi, CC BY-SA 4.0.
+Sitede bu sayfadan yalnız künye (isimler, görevler, tarih, süre) kullanılır.
+
+{{diğer anlamı|Recep İvedik (karakter)}}
+{{Film bilgi kutusu
+| ad = Recep İvedik
+| özgünad = 
+| görsel = Recep-Ivedik-1.jpg
+| görselaltyazısı = Filmin afişi
+| yönetmen = [[Togan Gökbakar]]
+| yapımcı = [[Faruk Aksoy]] <br> [[Mehmet Soyarslan]]<br>[[Ayşe Germen]]<br>[[Raif İnan]]
+| yazar = 
+| senarist = [[Serkan Altuniğne]]<br>[[Şahan Gökbakar]]
+| öykü = 
+| uyarlama = 
+| başrol = [[Şahan Gökbakar]]<br>[[Fatma Toptaş]]<br>[[Lemi Filozof]]<br>[[Hakan Bilgin]]
+| seslendirmen = 
+| besteci = 
+| görüntüyönetmeni = [[Ertunç Şenkay]]
+| kurgucu = [[Erkan Özekan]]
+| yapımşirketi = [[Özen Film]]<br>[[Aksoy Film]]
+| dağıtımşirketi = 
+| renksüreci = Renkli
+| çıkıştarihi = <!-- {{film tarihi|yıl|ay|gün}}--> 22 Şubat 2008
+| süre = 100 dakika
+| ülke = [[Türkiye]]
+| dil = [[Türkçe]]
+| bütçe = 
+| hasılat = 30.172.530,00 TL<ref name="Hasılat">{{haber kaynağı|url=http://boxofficeturkiye.com/film/2008041/Recep-Ivedik.htm|başlık=Recep İvedik|tarih=2008|erişimtarihi=4 Şubat 2014|iş=Boxoffice|arşivurl=https://web.archive.org/web/20140208012451/http://boxofficeturkiye.com/film/2008041/Recep-Ivedik.htm|arşivtarihi=8 Şubat 2014|ölüurl=evet}}</ref>
+| öncül = 
+| ardıl = ''[[Recep İvedik 2]]''
+}}
+'''''Recep İvedik''''', 22 Şubat 2008'de vizyona giren, [[Şahan Gökbakar]]'ın oynadığı sinema filmi. ''[[Dikkat Şahan Çıkabilir]]''<nowiki/>'in [[Recep İvedik (karakter)|Recep İvedik]] karakterinin TV'de tutmasının üzerine çekilmiştir. [[Fragman]]ı, Mart 2008 itibarıyla [[YouTube]] adlı video paylaşım sitesinde yaklaşık 5 milyon 750 bin kez izlenen film, topladığı büyük ilginin ardından 21 Şubat 2008'de 230 kopyayla vizyona girmiştir. İlk üç gününde 791.536 kişi tarafından izlenen ''Recep İvedik'', Türkiye'de ilk 3 gününde en çok izlenen filmler sıralamasında ikinci sıraya yerleşmiştir.<ref>{{haber kaynağı|başlık=‘Recep İvedik’ten Rekor Açılış!|url=http://www.sinemalar.com/haber/309/recep-ivedikten-rekor-acilis|erişimtarihi=22 Şubat 2015|ajans=Box Office Türkiye|yayıncı=Sinemalar.com|tarih=25 Ocak 2008|arşivurl=https://web.archive.org/web/20150222113833/http://www.sinemalar.com/haber/309/recep-ivedikten-rekor-acilis|arşivtarihi=22 Şubat 2015|ölüurl=hayır}}</ref> 17 günde 3 milyon 150 bin kişi tarafından izlenmiştir.
+
+==Konusu==
+[[Recep İvedik (karakter)|Recep İvedik]], sokakta bulduğu bir cüzdanın sahibini, akşam evinde seyrettiği televizyonda görür ve adamın Antalyalı çok önemli bir iş adamı olduğunu öğrenir, ardından arabasına atlar ve Antalya'ya doğru yola koyulur. Yol boyunca birbirinden komik sürprizlerle karşılaşan Recep sonunda Antalya'ya varır ve cüzdanı turizmci Muhsin Bey'e teslim eder. Muhsin Bey, ona cüzdanını teslim ettiği için otelde 1 hafta konaklama hediyesi vermek ister. Recep ilk önce kabul etmez, fakat otele çocukluk aşkı Sibel'in geldiğini görünce teklifi kabul eder.
+
+==Oyuncu kadrosu ve karakterler==
+{| class="wikitable plainrowheaders" style="margin-right: 0; font-size: 100%;"
+! Oyuncu
+! Rol
+! Açıklama
+|-
+| [[Şahan Gökbakar]]
+| [[Recep İvedik (karakter)|Recep İvedik]]
+| Filmin ana karakteri
+|-
+| [[Fatma Toptaş]]
+| Sibel
+| Recep İvedik'in çocukluk aşkı
+|-
+| [[Tuluğ Çizgen]]
+| Damla
+| Sibel'in annesi
+|-
+| [[Lemi Filozof]]
+| Fadıl
+| Bellboy
+|-
+| [[Hakan Bilgin]]
+| Erim
+| Otel müdürü
+|-
+| [[Vural Buldu]]
+| Muhsin Başaran
+| Otel sahibi
+|-
+| Volkan Cal
+| Murat
+| Sibel'in arkadaşı
+|-
+| [[Sevgi Berna Biber]]
+| Ezgi
+| Recep'in peşindeki kadın
+|-
+| Somer Karvan
+| Ersin
+| Dalış hocası
+|-
+| [[İsmail Hakkı Ürün]]
+| Mahmut
+| Şampiyoncu
+|-
+| Hakan Akın
+| Halil
+| Kamyoncu
+|-
+| [[Ertunç Şenkay]]
+| Hakan
+| Sahildeki rejisör
+|-
+| [[Zeynep Aydemir]]
+| Müge
+| Arabası bozulan kız
+|-
+| Burcu Sülün
+|
+| Arabası bozulan kızın arkadaşı
+|-
+| Mehmet Güler
+| İbrahim 
+| Duran Adam 
+|-
+| [[Yakup Yavru]]
+| Süper Mario
+| Kurufasülyeci
+|-
+| Batuhan Ergün
+| [[Recep İvedik (karakter)|Recep İvedik]]
+| Recep'in küçüklüğü
+|-
+| Merve Mutlu
+| Sibel
+| Sibel'in küçüklüğü
+|-
+| Mehmet Yumurtacı
+| Salih
+| Bakkal
+|-
+| Ferhat Uçar
+| Emre
+| Animatör
+|-
+| [[Nedim Doğan (oyuncu)|Nedim Doğan]]
+| Oğuzhan
+| Komiser
+|-
+| [[Serkan Altuniğne]]
+| Serdar 
+| Cafede Yaşayan
+|-
+| Cenk Turanlı
+| Can
+| rowspan="3" | Cafedeki Adam
+|-
+| Okan Özden
+| Ömer 
+|-
+| Serkan Güler
+| Sercan
+|-
+| [[Kaya Gürel]]
+| Onur 
+| Evsiz adam
+|-
+| [[Murat Akdağ]]
+| Doğan
+| Polis
+|-
+| Gamze İnci
+| Gizem
+| Resepsiyonist
+|-
+| [[Asiye Dinçsoy]]
+| Anrator Senpanor
+| Spa görevlisi
+|-
+| Sevcan İrşi
+| Sermalican
+| Kat görevlisi
+|-
+| Gözde Demirbilek
+| Gözdeliman
+| Spiker
+|-
+| Selçuk Şireci
+| Erkan 
+| Görevli
+|-
+| Baran Şahin
+| Mehmet
+| Mendilci çocuk
+|-
+| Kaan Önal
+| Efe 
+| Diskodaki garson
+|}
+
+==Kaynakça==
+{{Kaynakça}}
+
+== Dış bağlantılar ==
+* {{IMDb'de film}}
+* {{SinemaTürk'te film}}
+* {{Beyazperde'de film|Recep İvedik|134678}}
+* {{Sinemalar.com'da film}}
+
+{{Recep İvedik}}
+
+[[Kategori:2000'lerde Türkçe filmler]]
+[[Kategori:2008 çıkışlı filmler]]
+[[Kategori:2008 çıkışlı komedi filmleri]]
+[[Kategori:2008 çıkışlı Türk filmleri]]
+[[Kategori:Antalya ilinde çekilmiş filmler]]
+[[Kategori:Ertunç Şenkay'ın görüntülediği filmler]]
+
+[[Kategori:Recep İvedik|1]]
+[[Kategori:Togan Gökbakar'ın yönettiği filmler]]
+[[Kategori:Türk komedi filmleri]]
+[[Kategori:Konusu İstanbul'da geçen filmler]]

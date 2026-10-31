@@ -33,9 +33,85 @@
    "slug": "recep-ivedik-7",
    "title": "Recep İvedik 7",
    "year": 2022,
+   "release": "9 Aralık 2022",
    "videos": [],
    "story": [],
-   "credits": [],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "AVUKAT BÜŞRA ALTIN",
+       "ÖZNUR SERÇELER"
+      ],
+      [
+       "NURULLAH SAĞLAM",
+       "NURULLAH ÇELEBİ"
+      ],
+      [
+       "ERDEM ÇÖKELEK",
+       "İRFAN KANGI"
+      ],
+      [
+       "ÖĞRETMEN KEMAL",
+       "ERAY TÜRK"
+      ],
+      [
+       "MUHTAR ASIM CİVAN",
+       "MURAT ERGÜR"
+      ],
+      [
+       "KENDİSİ",
+       "MURAT DALKILIÇ"
+      ],
+      [
+       "ENVER ÇÖKELEK",
+       "MEHMET İLHAMİ ADSAL"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "YAPIMCI",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR / ÇAĞRI ÖZEREN"
+      ],
+      [
+       "SENARYO",
+       "TOGAN GÖKBAKAR / ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "GÉRARD SIMON"
+      ],
+      [
+       "KURGU",
+       "ERSİN EKER"
+      ],
+      [
+       "MÜZİK",
+       "JINGLE JUNGLE"
+      ],
+      [
+       "YAPIM ŞİRKETİ",
+       "CİELO MEDYA"
+      ],
+      [
+       "SÜRE",
+       "2 SAAT 13 DAKİKA"
+      ]
+     ]
+    }
+   ],
    "poster": {
     "src": "img/ri7/afis.jpg",
     "w": 780,
@@ -43,7 +119,7 @@
    },
    "posters": [],
    "photos": [],
-   "_kaynak": "Afiş TMDB. Hikaye, künye ve fragman henüz yok."
+   "_kaynak": "Afiş TMDB. Künye tr.wikipedia.org (2026-10-31, tests/kaynak/tr.wikipedia.org_recep-ivedik-7.txt); eski sitede ve Wayback arşivinde yok. Hikaye Togan'dan gelecek."
   },
   {
    "no": 6,
@@ -759,6 +835,7 @@
    "slug": "recep-ivedik-3",
    "title": "Recep İvedik 3",
    "year": 2010,
+   "release": "12 Şubat 2010",
    "videos": [
     {
      "title": "Fragman",
@@ -766,7 +843,90 @@
     }
    ],
    "story": [],
-   "credits": [],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "ZEYNEP",
+       "ZEYNEP ÇAMCI"
+      ],
+      [
+       "NEZAHAT",
+       "SEVİM YATLILAR"
+      ],
+      [
+       "BAKKAL SALİH",
+       "MEHMET YUMURTACI"
+      ],
+      [
+       "MUHABİR",
+       "VOLKAN CAL"
+      ],
+      [
+       "MAHMUT",
+       "MURAT MAHMUTYAZICIOĞLU"
+      ],
+      [
+       "AK SAKALLI DEDE",
+       "OKTAY DENER"
+      ],
+      [
+       "KARATE HOCASI",
+       "VAHDET ÇAKAR"
+      ],
+      [
+       "MARİA",
+       "DİLARA YÜZER"
+      ],
+      [
+       "PSİKOLOG",
+       "BEKİR TOSUN"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "YAPIMCI",
+       "FARUK AKSOY / MEHMET SOYARSLAN"
+      ],
+      [
+       "SENARYO",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR / CAN ALİ SABUNCU"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "ERTUNÇ ŞENKAY"
+      ],
+      [
+       "KURGU",
+       "ERKAN ÖZEKAN"
+      ],
+      [
+       "MÜZİK",
+       "OĞUZ KAPLANGI"
+      ],
+      [
+       "YAPIM ŞİRKETİ",
+       "AKSOY FİLM / ÖZEN FİLM"
+      ],
+      [
+       "VİZYON TARİHİ",
+       "12 ŞUBAT 2010"
+      ]
+     ]
+    }
+   ],
    "poster": {
     "src": "img/ri3/afis.jpg",
     "w": 780,
@@ -774,13 +934,14 @@
    },
    "posters": [],
    "photos": [],
-   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Künye tr.wikipedia.org (2026-10-31, tests/kaynak/tr.wikipedia.org_recep-ivedik-3.txt); eski sitede ve Wayback arşivinde yok. Hikaye Togan'dan gelecek."
   },
   {
    "no": 2,
    "slug": "recep-ivedik-2",
    "title": "Recep İvedik 2",
    "year": 2009,
+   "release": "13 Şubat 2009",
    "videos": [
     {
      "title": "Fragman",
@@ -788,7 +949,82 @@
     }
    ],
    "story": [],
-   "credits": [],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "PAKİZE İVEDİK",
+       "GÜLSEN ÖZBAKAN"
+      ],
+      [
+       "HAKAN İVEDİK",
+       "EFE BABACAN"
+      ],
+      [
+       "ALİ KEREM",
+       "ÇAĞRI BÜYÜKSAYAR"
+      ],
+      [
+       "YAKUZA",
+       "ASİYE DİNÇSOY"
+      ],
+      [
+       "KASİYER",
+       "ZEYNEP ÇAMCI"
+      ],
+      [
+       "YOGA HOCASI",
+       "AYSAN SÜMERCAN"
+      ],
+      [
+       "ECZACI",
+       "FÜSUN ÖZTOPRAK"
+      ],
+      [
+       "METİN ABİ",
+       "METİN CANTİMUR"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "YAPIMCI",
+       "FARUK AKSOY / MEHMET SOYARSLAN"
+      ],
+      [
+       "SENARYO",
+       "ŞAHAN GÖKBAKAR / SERKAN ALTUNİĞNE / TOGAN GÖKBAKAR"
+      ],
+      [
+       "KURGU",
+       "ERKAN ÖZEKAN"
+      ],
+      [
+       "MÜZİK",
+       "OĞUZ KAPLANGI"
+      ],
+      [
+       "YAPIM ŞİRKETİ",
+       "AKSOY FİLM / ÖZEN FİLM"
+      ],
+      [
+       "VİZYON TARİHİ",
+       "13 ŞUBAT 2009"
+      ]
+     ]
+    }
+   ],
    "poster": {
     "src": "img/ri2/afis.jpg",
     "w": 780,
@@ -796,7 +1032,7 @@
    },
    "posters": [],
    "photos": [],
-   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Künye tr.wikipedia.org (2026-10-31, tests/kaynak/tr.wikipedia.org_recep-ivedik-2.txt); eski sitede ve Wayback arşivinde yok. Hikaye Togan'dan gelecek."
   },
   {
    "no": 1,
@@ -810,7 +1046,90 @@
     }
    ],
    "story": [],
-   "credits": [],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "SİBEL",
+       "FATMA TOPTAŞ"
+      ],
+      [
+       "DAMLA",
+       "TULUĞ ÇİZGEN"
+      ],
+      [
+       "FADIL",
+       "LEMİ FİLOZOF"
+      ],
+      [
+       "ERİM",
+       "HAKAN BİLGİN"
+      ],
+      [
+       "MUHSİN BAŞARAN",
+       "VURAL BULDU"
+      ],
+      [
+       "MURAT",
+       "VOLKAN CAL"
+      ],
+      [
+       "EZGİ",
+       "SEVGİ BERNA BİBER"
+      ],
+      [
+       "ERSİN",
+       "SOMER KARVAN"
+      ],
+      [
+       "MAHMUT",
+       "İSMAİL HAKKI ÜRÜN"
+      ],
+      [
+       "HALİL",
+       "HAKAN AKIN"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "YAPIMCI",
+       "FARUK AKSOY / MEHMET SOYARSLAN / AYŞE GERMEN / RAİF İNAN"
+      ],
+      [
+       "SENARYO",
+       "SERKAN ALTUNİĞNE / ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "ERTUNÇ ŞENKAY"
+      ],
+      [
+       "KURGU",
+       "ERKAN ÖZEKAN"
+      ],
+      [
+       "YAPIM ŞİRKETİ",
+       "ÖZEN FİLM / AKSOY FİLM"
+      ],
+      [
+       "SÜRE",
+       "100 DAKİKA"
+      ]
+     ]
+    }
+   ],
    "poster": {
     "src": "img/ri1/afis.jpg",
     "w": 780,
@@ -818,7 +1137,7 @@
    },
    "posters": [],
    "photos": [],
-   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Künye tr.wikipedia.org (2026-10-31, tests/kaynak/tr.wikipedia.org_recep-ivedik.txt); eski sitede ve Wayback arşivinde yok. Hikaye Togan'dan gelecek."
   }
  ]
 }

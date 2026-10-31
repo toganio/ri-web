@@ -193,6 +193,7 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 .pager a { display: flex; flex-direction: column; gap: 10px; padding: clamp(40px, 7vw, 100px) var(--pad); background: var(--tint);
   transition: background .35s; }
 .pager .next { text-align: right; }
+.pager a:only-child { grid-column: 1 / -1; }
 .pager small { font-size: 12px; letter-spacing: .2em; font-weight: 800; color: var(--mute); }
 .pager b { font: 400 clamp(28px, 5vw, 76px)/.95 var(--display); font-weight: 400; padding-top: .1em; }
 .pager a:hover { background: var(--tone); }

@@ -14,11 +14,12 @@ _Son güncelleme: 2026-11-01 00:17 (Türkiye saati) — claude.ai/code bulut otu
 - Internet Archive kopyaları indirildi (iş akışı `eski-site-arsivi.yml`, sürüm `eski-site-wayback`).
 
 ## Şu an açık iş
-- Dal `claude/project-thread-utmr6q`, PR #1 (taslak). Birleştirme 1-2-3-7 içeriğinden sonra.
+- Dal `claude/project-thread-utmr6q`, PR #1. Birleştirme Togan 1-2-3-7 içerik kararını verince.
 
 ## Sıradaki adım
-1. Arşiv kopyalarından 1, 2, 3 ve 7. filmlerin hikaye ve künyesi (yoksa Togan'a sorulur).
+1. 1, 2, 3 ve 7: arşivde yok; künye Vikipedi'den eklendi (önerilen yol), hikaye Togan'dan beklenir.
 2. PR birleşir, canlı yayın; sonra recepivedik.com bağlanır (e-posta MX/SPF satırlarına dokunmadan).
 
 ## Togan'dan beklenen
 - Açık renkli Seri önizlemesine bakıp onay ya da düzeltme.
+- 1, 2, 3, 7 içerik kararı: metni kendisi mi gönderir, künye Vikipedi'den mi (önerilen), yoksa şimdilik böyle mi.

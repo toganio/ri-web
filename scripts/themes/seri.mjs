@@ -48,7 +48,7 @@ export default {
     const trailer = newest.find((f) => f.videos?.length);
     return `${header(p)}
 <main id="icerik">
-  <section class="hero" data-bgvideo="${trailer ? p.esc(trailer.videos[0].youtube) : ''}">
+  <section class="hero" data-tilt data-bgvideo="${trailer ? p.esc(trailer.videos[0].youtube) : ''}">
     <div class="bg-video" aria-hidden="true"></div>
     <div class="shade" aria-hidden="true"></div>
     <div class="deck" aria-hidden="true">
@@ -59,10 +59,11 @@ export default {
     <a class="scroll-cue" href="#seri" aria-label="${p.esc(p.labels.films)}"><span></span></a>
   </section>
   <div class="ticker" aria-hidden="true"><div>${Array(4).fill(p.films.map((f) => `<span>${p.esc(p.up(f.title))}</span><i>★</i>`).join('')).join('')}</div></div>
+  <nav class="spy" aria-hidden="true">${newest.map((f) => `<a class="t${f.no}" href="#film-${f.no}" tabindex="-1">${f.no}</a>`).join('')}</nav>
   <section id="seri" class="chapters">
     ${newest
       .map(
-        (f, i) => `<article class="chapter t${f.no}${i % 2 ? ' flip' : ''}">
+        (f, i) => `<article class="chapter t${f.no}${i % 2 ? ' flip' : ''}" id="film-${f.no}" data-spy>
       <span class="num" data-speed="-120" aria-hidden="true">${f.no}</span>
       <a class="poster rv" href="${p.href(f)}" data-speed="40">${p.img(f.poster, f.title)}</a>
       <div class="text rv">

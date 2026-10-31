@@ -139,6 +139,38 @@
     });
   });
 
+  // İmlece göre hafif eğilen sahne (data-tilt): --mx, --my (-1 … 1).
+  const tilt = document.querySelector('[data-tilt]');
+  if (tilt && matchMedia('(hover: hover)').matches && !reduce) {
+    let raf = 0;
+    tilt.addEventListener('mousemove', (e) => {
+      const r = tilt.getBoundingClientRect();
+      const mx = ((e.clientX - r.left) / r.width) * 2 - 1;
+      const my = ((e.clientY - r.top) / r.height) * 2 - 1;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        tilt.style.setProperty('--mx', mx.toFixed(3));
+        tilt.style.setProperty('--my', my.toFixed(3));
+      });
+    });
+  }
+
+  // Görünen bölümün numarasını yan göstergede işaretler (data-spy → .spy a[href="#id"]).
+  const spied = document.querySelectorAll('[data-spy]');
+  if (spied.length && 'IntersectionObserver' in window) {
+    const marks = new Map([...document.querySelectorAll('.spy a')].map((a) => [a.getAttribute('href').slice(1), a]));
+    const io2 = new IntersectionObserver(
+      (es) =>
+        es.forEach((en) => {
+          if (!en.isIntersecting) return;
+          marks.forEach((a) => a.classList.remove('on'));
+          marks.get(en.target.id)?.classList.add('on');
+        }),
+      { rootMargin: '-45% 0px -45% 0px' },
+    );
+    spied.forEach((el) => io2.observe(el));
+  }
+
   // Menü düğmesi (telefon).
   const tg = document.querySelector('.menu-toggle');
   if (tg)

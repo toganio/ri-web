@@ -69,7 +69,7 @@ export default {
       <div class="text rv">
         <p class="year">${f.year}</p>
         <h2><a href="${p.href(f)}">${p.esc(p.up(f.title))}</a></h2>
-        <p class="lead">${p.esc(f.story[0])}</p>
+        ${f.story.length ? `<p class="lead">${p.esc(f.story[0])}</p>` : ''}
         <a class="go" href="${p.href(f)}">${p.esc(p.up(p.labels.goFilm))} <span aria-hidden="true">→</span></a>
       </div>
     </article>`,
@@ -88,7 +88,8 @@ ${footer(p)}`;
     <h2 class="label">${p.esc(p.up(p.labels.trailer))}</h2>
     <div class="video-grid">${f.videos.map((v) => `<figure>${p.video(f, v)}<figcaption>${p.esc(p.up(v.title))}</figcaption></figure>`).join('')}</div>
   </section>`);
-    sections.push(`<section class="block story rv" id="hikaye">
+    if (f.story.length)
+      sections.push(`<section class="block story rv" id="hikaye">
     <h2 class="label">${p.esc(p.up(p.labels.story))}</h2>
     <div class="story-text">${f.story.map((s, i) => `<p${i === 0 ? ' class="first"' : ''}>${p.esc(s)}</p>`).join('')}</div>
   </section>`);
@@ -118,7 +119,7 @@ ${footer(p)}`;
       <h1>${letters(p.up(f.title))}</h1>
       <nav class="jump">${[
         f.videos?.length && ['fragman', p.labels.trailer],
-        ['hikaye', p.labels.story],
+        f.story.length && ['hikaye', p.labels.story],
         f.credits?.length && ['kunye', p.labels.credits],
         f.posters?.length && ['afis', p.labels.poster],
         f.photos?.length && ['galeri', p.labels.gallery],

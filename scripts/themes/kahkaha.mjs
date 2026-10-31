@@ -80,7 +80,8 @@ ${footer(p)}`;
   film(p, f) {
     const { prev, next } = p.neighbours(f);
     const out = [];
-    out.push(`<section class="story" id="hikaye">
+    if (f.story.length)
+      out.push(`<section class="story" id="hikaye">
     <h2 class="tag rv">${p.esc(p.up(p.labels.story))}</h2>
     <p class="big rv">${p.esc(f.story[0])}</p>
     ${f.story.slice(1).map((s) => `<p class="rv">${p.esc(s)}</p>`).join('\n    ')}

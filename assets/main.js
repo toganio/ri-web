@@ -109,6 +109,7 @@
   const setScroll = () => {
     const h = document.documentElement.scrollHeight - innerHeight;
     document.documentElement.style.setProperty('--scroll', h > 0 ? (scrollY / h).toFixed(4) : 0);
+    document.documentElement.classList.toggle('past-hero', scrollY > innerHeight * 0.7);
   };
   addEventListener('scroll', setScroll, { passive: true });
   setScroll();

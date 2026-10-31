@@ -29,6 +29,23 @@
  },
  "films": [
   {
+   "no": 7,
+   "slug": "recep-ivedik-7",
+   "title": "Recep İvedik 7",
+   "year": 2022,
+   "videos": [],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri7/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "_kaynak": "Afiş TMDB. Hikaye, künye ve fragman henüz yok."
+  },
+  {
    "no": 6,
    "slug": "recep-ivedik-6",
    "title": "Recep İvedik 6",
@@ -736,6 +753,72 @@
     }
    ],
    "_kaynak": "recepivedik.com/recep-ivedik-4 (hikaye.html, kunye.png, galeri, afişler; 2026-10-31); oyuncu rolleri ve fragmanlar camasirhanefilm.com; afiş TMDB"
+  },
+  {
+   "no": 3,
+   "slug": "recep-ivedik-3",
+   "title": "Recep İvedik 3",
+   "year": 2010,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "wU7yHUYWqS8"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri3/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
+  },
+  {
+   "no": 2,
+   "slug": "recep-ivedik-2",
+   "title": "Recep İvedik 2",
+   "year": 2009,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "jUkm-Qz3wjc"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri2/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
+  },
+  {
+   "no": 1,
+   "slug": "recep-ivedik",
+   "title": "Recep İvedik",
+   "year": 2008,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "ite5gbn55TQ"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri1/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski arşivden gelecek."
   }
  ]
 }

@@ -55,7 +55,7 @@ test('içerik dosyasının yapısı', () => {
   assert.equal(new Set(nos).size, nos.length, 'film numaraları tekrar ediyor');
   for (const f of c.films) {
     assert.match(f.slug, /^[a-z0-9-]+$/);
-    assert.ok(f.title && f.year && f.story?.length && f.poster?.src, `${f.slug}: eksik alan`);
+    assert.ok(f.title && f.year && Array.isArray(f.story) && f.poster?.src, `${f.slug}: eksik alan`);
     for (const im of [f.poster, ...(f.posters || []), ...(f.photos || [])])
       assert.ok(existsSync(join(ROOT, im.src)), `${f.slug}: görsel yok: ${im.src}`);
   }

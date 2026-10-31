@@ -120,7 +120,7 @@ for (const f of films) {
     `${f.slug}/index.html`,
     page({
       title: `${f.title} (${f.year}) – ${c.site.title}`,
-      description: f.story[0],
+      description: f.story[0] || c.site.description,
       path: href(f),
       body: theme.film(parts, f),
       bodyClass: `film film-${f.no}`,

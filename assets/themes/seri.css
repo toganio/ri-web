@@ -47,7 +47,6 @@ body.theme-seri { background: var(--bg); color: var(--fg); font: 400 17px/1.65 v
   to { transform: translate(calc(var(--k) * 11vw), calc(var(--k) * var(--k) * 1.2vw - 4vh)) rotate(calc(var(--k) * 9deg)); opacity: .55; }
 }
 @media (max-width: 700px) {
-  .mega { font-size: 27vw; line-height: .9; }
   @keyframes fan {
     from { transform: translateY(40vh); opacity: 0; }
     to { transform: translate(calc(var(--k) * 13vw), calc(var(--k) * var(--k) * 2vw - 6vh)) rotate(calc(var(--k) * 8deg)); opacity: .5; }
@@ -109,7 +108,9 @@ body.theme-seri { background: var(--bg); color: var(--fg); font: 400 17px/1.65 v
 }
 
 /* Yan gösterge: hangi filmdesin */
-.spy { position: fixed; z-index: 60; right: 18px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; }
+.spy { position: fixed; z-index: 60; right: 18px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px;
+  opacity: 0; pointer-events: none; transition: opacity .4s; }
+.past-hero .spy { opacity: 1; pointer-events: auto; }
 .spy a { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; font: 400 13px/1 var(--display); color: var(--mute);
   transition: color .25s, background .25s, transform .3s cubic-bezier(.2, .8, .2, 1.6); }
 .spy a.on { background: var(--tone); color: #000; transform: scale(1.25); }
@@ -176,3 +177,5 @@ body.theme-seri { background: var(--bg); color: var(--fg); font: 400 17px/1.65 v
 .social { display: flex; gap: 14px; }
 
 .nf { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px var(--pad); }
+
+@media (max-width: 700px) { .hero .mega { font-size: 27vw; line-height: .92; } .hero .mega .w { display: block; } }

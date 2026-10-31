@@ -1,0 +1,49 @@
+# recepivedik.com'u Firebase Hosting'e (site recepivedik) bağlar ve durumu yazar (Togan onayı 2026-11-01: "tamam böyle deploy et").
+# Elle çalıştırılır; tekrar çalıştırmak güvenlidir: alan adı varsa yeniden eklemez, yalnız durumu ve alan adı
+# firmasında (GoDaddy) girilmesi gereken DNS kayıtlarını gösterir. E-posta (MX, SPF) satırlarına dokunulmaz.
+name: Alan adı
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: alan-adi
+  cancel-in-progress: false
+jobs:
+  alan-adi:
+    # Sır kullandığı için GitHub makinesinde kalır.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      API: https://firebasehosting.googleapis.com/v1beta1/projects/camasirhanefilm-web/sites/recepivedik/customDomains
+    steps:
+      - name: Yetki
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        # Anahtar yalnız bu geçici makinede, işin sonunda silinir; değeri çıktıya yazılmaz.
+        run: |
+          umask 077
+          python3 -c 'import json,os; json.dump(json.loads(os.environ["SA"], strict=False), open(os.environ["RUNNER_TEMP"] + "/sa.json", "w"))'
+          gcloud auth activate-service-account --key-file="$RUNNER_TEMP/sa.json" --quiet
+          TOKEN=$(gcloud auth print-access-token)
+          echo "::add-mask::$TOKEN"
+          echo "TOKEN=$TOKEN" >> "$GITHUB_ENV"
+      - name: Alan adlarını ekle (yoksa)
+        run: |
+          ekle() {
+            code=$(curl -sS -o out.json -w '%{http_code}' -H "Authorization: Bearer $TOKEN" "$API/$1")
+            if [ "$code" = 200 ]; then echo "$1 zaten ekli"; return; fi
+            curl -sS --fail-with-body -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
+              "$API?customDomainId=$1" -d "$2" > /dev/null && echo "$1 eklendi"
+          }
+          ekle recepivedik.com '{}'
+          ekle www.recepivedik.com '{"redirectTarget":"recepivedik.com"}'
+      - name: Durum ve gereken DNS kayıtları
+        run: |
+          sleep 15
+          for d in recepivedik.com www.recepivedik.com; do
+            echo "=== $d"
+            curl -sS --fail-with-body -H "Authorization: Bearer $TOKEN" "$API/$d" | jq '{hostState, ownershipState, cert: .cert.state, redirectTarget, issues, gerekli: [.requiredDnsUpdates.desired[]? | {domainName, records: [.records[]? | {type, rdata, requiredAction}]}], mevcut: [.requiredDnsUpdates.discovered[]? | {domainName, records: [.records[]? | {type, rdata}]}]}'
+          done
+      - if: always()
+        run: rm -f "$RUNNER_TEMP/sa.json"

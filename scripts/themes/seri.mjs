@@ -48,7 +48,6 @@ export default {
     return `${header(p)}
 <main id="icerik">
   <section class="hero" data-tilt>
-    <div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="deck" aria-hidden="true">
       ${p.films.map((f, i) => `<div class="card t${f.no}">${p.img(f.poster, '', '', ' fetchpriority="high"')}</div>`).join('\n      ')}
     </div>

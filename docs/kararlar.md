@@ -52,3 +52,6 @@
   ilerleme çubuğu ve alt bilgideki dev yazı.
 - 2026-11-01: Sayfalar (HTML) `no-cache` ile sunulur. Firebase'in varsayılanı 1 saatti; Togan yeni tasarımı yayından sonra
   telefonunda eski hâliyle gördü.
+- 2026-11-01: Togan *"o rengarenk hâlini sevmedim"*, *"gömlek desenini kullanarak"*. Filmlere ayrı renk verme (gökkuşağı)
+  kaldırıldı; renkler yalnız gömlekten: turuncu `#f9420f`, sarı `#fc9a12`, bordo `#6d0000`, krem zemin. Ana sayfanın üst
+  bölümü gömlek kumaşı (beyaz başlık, bordo gölge); film bölümleri krem / açık turuncu sırayla, dev numaralar turuncu ve sarı.

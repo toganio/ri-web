@@ -77,3 +77,6 @@
 - 2026-11-01: Togan *"ilk tasarımda böyle bar yoktu"* (üstteki buzlu krem şerit). Üst çubuğun zemini kaldırıldı: logo ve film
   numaraları doğrudan sayfanın üstünde. Ana sayfanın gömlek/fragman bölümündeyken logo krem, aşağıda koyu; numaralar beyaz
   yuvarlak, bulunulan film bordo.
+- 2026-11-01: Togan *"sitedeki tüm Box Office Türkiye linklerini kaldır"*. Ana sayfadaki kaynak satırı ve film sayfalarındaki
+  "Kaynak: Box Office Türkiye" bağlantısı kaldırıldı; sayılar yerinde. Kaynak yalnız depoda (`tests/kaynak/`, bu dosya); test
+  sitede bu bağlantının olmadığını da denetler.

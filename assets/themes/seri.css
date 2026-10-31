@@ -141,8 +141,6 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
   background: var(--dokuma), var(--gomlek) 0 0 / 120px 100%; transition: width 1.6s cubic-bezier(.2, .8, .2, 1) .15s; }
 .g-num { justify-self: end; font: 400 clamp(22px, 2.6vw, 38px)/1 var(--display); padding-top: .1em; color: var(--bordo); font-variant-numeric: tabular-nums; }
 .medal .g-num { font-size: clamp(26px, 3.2vw, 46px); }
-.gise-src { max-width: 1100px; margin: 28px auto 0; text-align: center; font-size: 13px; color: var(--mute); }
-.gise-src a, .film-gise .src a { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 760px) {
   .gise-list a { grid-template-columns: minmax(0, 1fr) auto; gap: 10px 12px; }
   .g-rank, .g-bar { grid-column: 1 / -1; }
@@ -159,7 +157,6 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 .film-gise ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; padding: 0; }
 .film-gise li { padding: 9px 15px; background: #fff; border-radius: 30px; font-size: 12px; font-weight: 800; letter-spacing: .12em; box-shadow: 0 3px 0 var(--line); }
 .film-gise li b { color: var(--turuncu); }
-.film-gise .src { margin: 0; font-size: 12px; color: var(--mute); }
 
 /* Film bölümleri: krem ve açık turuncu sırayla, dev numara turuncu ve sarı sırayla */
 .chapter { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center; gap: clamp(24px, 6vw, 96px);

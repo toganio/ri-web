@@ -112,7 +112,8 @@ for (const theme of themes) {
       for (const ph of f.photos || []) assert.ok(html.includes(`/${ph.src}`), `${theme}/${f.slug}: fotoğraf eksik`);
       if (f.gise) {
         assert.ok(html.includes(nokta(f.gise.seyirci)) && home.includes(nokta(f.gise.seyirci)), `${theme}/${f.slug}: seyirci sayısı eksik`);
-        assert.ok(html.includes(f.gise.url), `${theme}/${f.slug}: gişe kaynağı bağlantısı eksik`);
+        // Togan 2026-11-01: sitede Box Office Türkiye bağlantısı olmaz (kaynak yalnız tests/kaynak/ ve docs/).
+        assert.ok(!/boxofficeturkiye/i.test(html) && !/boxofficeturkiye/i.test(home), `${theme}/${f.slug}: Box Office Türkiye bağlantısı var`);
       }
     }
     for (const p of ['index.html', '404.html', ...c.films.map((f) => `${f.slug}/index.html`)]) {

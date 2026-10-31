@@ -38,9 +38,7 @@
   "rank": "Tüm zamanlar {n}.",
   "boxEyebrow": "Gişe",
   "boxTitle": "Tüm zamanların en çok izlenen iki filmi",
-  "boxTotal": "Sinemada toplam seyirci · {n} film",
-  "boxSource": "Kaynak: {ad}. Sıra: 1989'dan bu yana Türkiye'de en çok izlenen 100 film listesi.",
-  "source": "Kaynak"
+  "boxTotal": "Sinemada toplam seyirci · {n} film"
  },
  "films": [
   {

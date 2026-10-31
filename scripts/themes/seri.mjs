@@ -41,13 +41,13 @@ const letters = (s) => {
 // Etiketteki {n} yerine kalın sayı: "{n} hafta vizyonda" → "<b>25</b> HAFTA VİZYONDA".
 const fill = (p, label, v) => label.split('{n}').map((x) => p.esc(p.up(x))).join(`<b>${v}</b>`);
 
-// Gişe bölümü (Togan 2026-11-01: "her filmin ne kadar izlendiğini yaz ve öne çıkar"). Rakamlar Box Office Türkiye'den.
+// Gişe bölümü (Togan 2026-11-01: "her filmin ne kadar izlendiğini yaz ve öne çıkar"). Rakamlar Box Office Türkiye'den;
+// sitede Box Office Türkiye bağlantısı yok (Togan: "sitedeki tüm Box Office Türkiye linklerini kaldır").
 const gise = (p) => {
   if (!p.gise.length) return '';
   const top = [...p.gise].sort((a, b) => b.gise.seyirci - a.gise.seyirci);
   const max = top[0].gise.seyirci;
   const ikili = top[0].gise.sira === 1 && top[1]?.gise.sira === 2;
-  const [once, sonra] = p.labels.boxSource.split('{ad}');
   return `<section class="gise" id="gise" aria-labelledby="gise-baslik">
     <div class="gise-head rv">
       <p class="eyebrow">${p.esc(p.up(p.labels.boxEyebrow))}</p>
@@ -67,7 +67,6 @@ const gise = (p) => {
         )
         .join('\n      ')}
     </ol>
-    <p class="gise-src">${p.esc(once)}<a href="${p.esc(p.site.gise.url)}" target="_blank" rel="noopener">${p.esc(p.site.gise.ad)}</a>${p.esc(sonra)}</p>
   </section>`;
 };
 
@@ -159,7 +158,6 @@ ${footer(p)}`;
           ? `<div class="film-gise">
         ${aud(p, f, true)}
         <ul><li>${p.esc(p.up(p.labels.opening))} <b>${p.num(f.gise.ilkHaftaSonu)}</b></li><li>${fill(p, p.labels.weeks, f.gise.hafta)}</li></ul>
-        <p class="src"><a href="${p.esc(f.gise.url)}" target="_blank" rel="noopener">${p.esc(p.labels.source)}: ${p.esc(p.site.gise.ad)}</a></p>
       </div>`
           : ''
       }

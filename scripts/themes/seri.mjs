@@ -53,7 +53,7 @@ export default {
       ${p.films.map((f, i) => `<div class="card t${f.no}">${p.img(f.poster, '', '', ' fetchpriority="high"')}</div>`).join('\n      ')}
     </div>
     <h1 class="mega" aria-label="${p.esc(p.site.title)}">${letters(p.up(p.site.title))}</h1>
-    <p class="hero-sub">${p.esc(p.up(p.labels.series))} · ${p.films[0].year}–${p.films[p.films.length - 1].year}</p>
+    <p class="hero-sub">${p.esc(p.up(p.labels.heroSub.replace('{n}', p.films.length).replace('{yil}', p.films[0].year)))}</p>
     <a class="scroll-cue" href="#seri" aria-label="${p.esc(p.labels.films)}"><span></span></a>
   </section>
   <div class="ticker" aria-hidden="true"><div>${Array(4).fill(p.films.map((f) => `<span>${p.esc(p.up(f.title))}</span><i>★</i>`).join('')).join('')}</div></div>

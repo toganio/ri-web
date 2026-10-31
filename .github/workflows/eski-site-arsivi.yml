@@ -1,0 +1,40 @@
+# recepivedik.com'un Internet Archive kopyalarını indirir ve "eski-site-wayback" sürümüne (release) koyar.
+# Neden: 1, 2, 3 ve 7. filmlerin içeriği bugünkü sitede yok; eski kopyalardan yalnız veri alınacak
+# (Togan, 2026-10-31). Zorunlu kontrol değildir; yalnız bu dosya ya da betik değişince ve elle koşar.
+name: Eski site arşivi
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/eski-site-arsivi.yml', 'scripts/wayback.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: eski-site-arsivi
+  cancel-in-progress: false
+jobs:
+  arsiv:
+    # Sürüm (release) yazdığı için GitHub makinesinde kalır.
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      ETIKET: eski-site-wayback
+    steps:
+      - uses: actions/checkout@v4
+      - name: Arşiv kopyalarını indir
+        run: python3 -I scripts/wayback.py
+      - name: Özet
+        run: |
+          head -c 60000 arsiv/ozet.txt || true
+          cut -f1,2,3,4 arsiv/liste.tsv | head -400
+      - name: Paketle ve sürüm olarak kaydet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp arsiv/ozet.txt ozet.txt; cp arsiv/liste.tsv liste.tsv
+          tar czf "$ETIKET.tar.gz" arsiv
+          ls -lh "$ETIKET.tar.gz"
+          gh release delete "$ETIKET" --repo "$GITHUB_REPOSITORY" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$ETIKET" "$ETIKET.tar.gz" ozet.txt liste.tsv --repo "$GITHUB_REPOSITORY" --target main \
+            --title "Eski recepivedik.com (Internet Archive kopyaları)" \
+            --notes "recepivedik.com'un Internet Archive'daki eski kopyaları: sayfalar, görseller, metinler. Yalnız içerik kaynağı olarak kullanılır; tasarım alınmaz."

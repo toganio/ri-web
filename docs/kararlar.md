@@ -69,3 +69,8 @@
   Rekoru – İlk 100 (1989'dan günümüze)" listesinden alındı (`tests/kaynak/boxofficeturkiye.com_seyirci.txt`; test her
   sayıyı oradan doğrular). Recep İvedik 7'nin Box Office Türkiye'de sinema kaydı yok, sayı yazılmadı. Aynı rakamlar
   sahangokbakar.com'da da kullanılıyor.
+- 2026-11-01: Togan *"tamam böyle deploy et"*. PR #1 birleşti, site https://recepivedik.web.app adresinde canlı. Güvenlik
+  denetimi `docs/evaluations/2026-11-01-canli-oncesi-guvenlik.md` (kritik bulgu yok). recepivedik.com, camasirhanefilm.com ile
+  aynı yolla bağlanıyor (`.github/workflows/alan-adi.yml`): GoDaddy DNS'te yalnız web satırları değişir, e-posta (MX, SPF)
+  satırlarına dokunulmaz. SPF'teki `a` kuralı A kaydı değişince Firebase adresini gösterir; e-posta `include:secureserver.net`
+  ile gittiği için etkilenmez.

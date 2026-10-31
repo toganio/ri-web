@@ -1,10 +1,11 @@
 # DURUM — kaldığımız yer
 
-_Son güncelleme: 2026-11-01 01:05 (Türkiye saati) — claude.ai/code bulut oturumu_
+_Son güncelleme: 2026-11-01 01:55 (Türkiye saati) — claude.ai/code bulut oturumu_
 
 ## Canlı
-- Yeni site henüz yok. Önizleme (PR #1, 2026-11-07'ye kadar): https://recepivedik--pr-1-seri-lhiq9jca.web.app
-  Bugünkü site: http://recepivedik.com (GoDaddy, 2019'dan beri değişmemiş, https sertifikası bozuk).
+- 2026-11-01'den beri: https://recepivedik.web.app (Togan: "tamam böyle deploy et"). PR #1 birleşti.
+  recepivedik.com henüz eski GoDaddy sitesine gidiyor (A 173.201.188.207); bağlama sürüyor (`alan-adi.yml`).
+- E-posta GoDaddy'de: MX secureserver.net, SPF `v=spf1 a mx ptr include:secureserver.net ~all`. Bunlara dokunulmaz.
 
 ## Son yapılan (ayrıntı ve Togan'ın sözleri `docs/kararlar.md`)
 - Tasarım Seri: renkler yalnız Recep'in gömleğinden; ana sayfa gömlek kumaşıyla açılır, sonra arkada RI7 fragmanı oynar.
@@ -15,13 +16,13 @@ _Son güncelleme: 2026-11-01 01:05 (Türkiye saati) — claude.ai/code bulut otu
 - 1, 2, 3 ve 7: yazı arşivde yok; Togan "şimdilik böyle kalsın" dedi (afiş + fragman).
 
 ## Şu an açık iş
-- Dal `claude/project-thread-utmr6q`, PR #1. Togan tasarım üzerinde çalışırken önizleme adresi sabit kalsın diye açık;
-  tasarım oturunca birleşir ve canlıya çıkar.
+- Dal `claude/project-thread-utmr6q`: alan adı iş akışı (`.github/workflows/alan-adi.yml`, elle çalışır).
 
 ## Sıradaki adım
-1. Togan'ın önizleme geri bildirimi.
-2. PR birleşir, canlı yayın; sonra recepivedik.com bağlanır (e-posta MX/SPF satırlarına dokunmadan).
+1. Firebase'e recepivedik.com ve www eklenir; gereken TXT/A kayıtları iş akışı çıktısından alınır.
+2. Togan GoDaddy DNS'te yalnız `@` A, `@` TXT (hosting-site) ve `www` satırlarını değiştirir; MX/SPF'e dokunulmaz.
+3. Sertifika gelince https://recepivedik.com ölçülür.
 
 ## Togan'dan beklenen
-- Önizlemeye bakıp onay ya da düzeltme.
+- GoDaddy DNS'te birkaç satır değişikliği (adım adım tarif edilir).
 - İsterse: Gotham web lisans dosyaları; 1, 2, 3 ve 7'nin hikaye/künye metni.

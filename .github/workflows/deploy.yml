@@ -1,6 +1,7 @@
 # Test + Firebase Hosting. PR'da: testler bir kez (ubicloud), sonra her tasarım ayrı önizleme kanalına.
 # main'de: PR'da geçen aynı ağaç yeniden test edilmez, seçili tasarım derlenip canlıya gider.
-# Proje camasirhanefilm-web, site adı firebase.json'da ("recepivedik"; yoksa ilk koşuda açılır).
+# Proje camasirhanefilm-web, site adı firebase.json'da ("recepivedik", 2026-10-31'de açıldı; anahtarı dosyaya yazan
+# "site yoksa aç" adımı 2026-11-01'de kaldırıldı).
 # Gereken sır: FIREBASE_SERVICE_ACCOUNT (yoksa yayın adımı atlanır).
 name: Test ve yayın
 on:
@@ -57,18 +58,6 @@ jobs:
           echo "::add-mask::$SA_JSON"
           echo "FIREBASE_SA_JSON=$SA_JSON" >> "$GITHUB_ENV"
           echo "var=1" >> "$GITHUB_OUTPUT"
-      - name: Firebase sitesi yoksa aç
-        if: steps.sir.outputs.var == '1'
-        run: |
-          SITE=$(node -p "require('./firebase.json').hosting.site")
-          umask 077; printf '%s' "$FIREBASE_SA_JSON" > "$RUNNER_TEMP/sa.json"
-          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          if npx -y firebase-tools@13 hosting:sites:get "$SITE" --project camasirhanefilm-web >/dev/null 2>&1; then
-            echo "site var: $SITE"
-          else
-            npx -y firebase-tools@13 hosting:sites:create "$SITE" --project camasirhanefilm-web
-          fi
-          rm -f "$RUNNER_TEMP/sa.json"
       - if: steps.sir.outputs.var == '1'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

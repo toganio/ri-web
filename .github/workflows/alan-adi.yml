@@ -14,36 +14,42 @@ jobs:
     # Sır kullandığı için GitHub makinesinde kalır.
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    defaults:
+      run:
+        # bash -eo pipefail: bir istek hata verirse adım kırmızı biter, boş sonuç yeşil görünmez.
+        shell: bash
     env:
       API: https://firebasehosting.googleapis.com/v1beta1/projects/camasirhanefilm-web/sites/recepivedik/customDomains
     steps:
-      - name: Yetki
+      - name: Alan adlarını ekle (yoksa), durumu ve gereken DNS kayıtlarını yaz
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-        # Anahtar yalnız bu geçici makinede, işin sonunda silinir; değeri çıktıya yazılmaz.
+        # Anahtar hiçbir dosyaya yazılmaz: kısa ömürlü erişim belirteci için gereken imza bellekte atılır
+        # (openssl anahtarı borudan okur), belirteç yalnız bu adımın değişkeninde durur ve çıktıda maskelenir.
         run: |
-          umask 077
-          python3 -c 'import json,os; json.dump(json.loads(os.environ["SA"], strict=False), open(os.environ["RUNNER_TEMP"] + "/sa.json", "w"))'
-          gcloud auth activate-service-account --key-file="$RUNNER_TEMP/sa.json" --quiet
-          TOKEN=$(gcloud auth print-access-token)
+          sa() { python3 -c 'import json,os,sys; print(json.loads(os.environ["SA"], strict=False)[sys.argv[1]], end="")' "$1"; }
+          b64() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+          now=$(date +%s)
+          head=$(printf '{"alg":"RS256","typ":"JWT"}' | b64)
+          body=$(printf '{"iss":"%s","scope":"https://www.googleapis.com/auth/cloud-platform","aud":"https://oauth2.googleapis.com/token","iat":%d,"exp":%d}' \
+            "$(sa client_email)" "$now" "$((now + 600))" | b64)
+          sig=$(printf '%s.%s' "$head" "$body" | openssl dgst -sha256 -binary -sign <(sa private_key) | b64)
+          TOKEN=$(curl -sS --fail-with-body https://oauth2.googleapis.com/token \
+            -d grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer -d "assertion=$head.$body.$sig" | jq -er .access_token)
           echo "::add-mask::$TOKEN"
-          echo "TOKEN=$TOKEN" >> "$GITHUB_ENV"
-      - name: Alan adlarını ekle (yoksa)
-        run: |
+          unset SA
+
           ekle() {
-            code=$(curl -sS -o out.json -w '%{http_code}' -H "Authorization: Bearer $TOKEN" "$API/$1")
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $TOKEN" "$API/$1")
             if [ "$code" = 200 ]; then echo "$1 zaten ekli"; return; fi
             curl -sS --fail-with-body -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
               "$API?customDomainId=$1" -d "$2" > /dev/null && echo "$1 eklendi"
           }
           ekle recepivedik.com '{}'
           ekle www.recepivedik.com '{"redirectTarget":"recepivedik.com"}'
-      - name: Durum ve gereken DNS kayıtları
-        run: |
+
           sleep 15
           for d in recepivedik.com www.recepivedik.com; do
             echo "=== $d"
             curl -sS --fail-with-body -H "Authorization: Bearer $TOKEN" "$API/$d" | jq '{hostState, ownershipState, cert: .cert.state, redirectTarget, issues, gerekli: [.requiredDnsUpdates.desired[]? | {domainName, records: [.records[]? | {type, rdata, requiredAction}]}], mevcut: [.requiredDnsUpdates.discovered[]? | {domainName, records: [.records[]? | {type, rdata}]}]}'
           done
-      - if: always()
-        run: rm -f "$RUNNER_TEMP/sa.json"

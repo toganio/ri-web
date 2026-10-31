@@ -22,4 +22,12 @@ Site bağımlılıksız statik HTML: giriş, ödeme, form, veritabanı, kullanı
   gönderir (tıklamadan). Saldırı değil, gizlilik notu. Düzeltme gerekirse: yazı tiplerini siteye koymak, fragmanı tıklayınca
   yüklemek.
 
+- **Low — anahtar geçici dosyada (PR #2 incelemesi, Codex):** yayın işinde Firebase eylemi (`action-hosting-deploy`) servis
+  hesabı anahtarını GitHub'ın tek kullanımlık makinesinde geçici bir dosyaya ve iş ortamı dosyasına yazarak çalışır. Makine iş
+  bitince silinir; anahtar çıktıda maskelenir. Kural "sır dosyaya yazılmaz" olduğu için azaltıldı: alan adı iş akışı anahtarı
+  hiç dosyaya yazmadan bellekte imzalayıp kısa ömürlü belirteç alıyor, yayın işindeki gereksiz "site yoksa aç" adımı
+  (anahtarı dosyaya yazıyordu) kaldırıldı. Kalıcı çözüm anahtarsız giriş (Workload Identity Federation): Google Cloud'da
+  bir kez kurulur, sonra GitHub'da hiç anahtar tutulmaz. camasirhanefilm.com ve sahangokbakar.com da aynı anahtarı kullandığı
+  için üç depoda birlikte yapılmalı.
+
 Sonuç: yayını durduran bulgu yok.

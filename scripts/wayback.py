@@ -37,7 +37,9 @@ def cdx_rows():
         "filter": "statuscode:200", "collapse": "digest", "limit": "50000",
     })
     data = get(CDX + q)
-    rows = json.loads(data or b"[]")
+    if data is None:  # arşiv servisine ulaşılamadı: boş sonuçla eski sürümün üstüne yazılmasın
+        raise SystemExit("CDX listesi alinamadi; yayin yapilmadi")
+    rows = json.loads(data)
     return [dict(zip(rows[0], r)) for r in rows[1:]] if rows else []
 
 
@@ -142,6 +144,8 @@ def main():
     with open(os.path.join(OUT, "ozet.txt"), "w") as f:
         f.write("".join(ozet))
     print(f"indirilen: {len(liste)} dosya, {total/1e6:.1f} MB, metinli kayit: {len(ozet)}")
+    if not liste:
+        raise SystemExit("hic dosya indirilemedi; yayin yapilmadi")
 
 
 if __name__ == "__main__":

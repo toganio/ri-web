@@ -1,0 +1,54 @@
+/* Tüm tasarımların ortak temeli: sıfırlama, erişilebilirlik, video kutusu, fotoğraf büyütme. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html.noscroll { overflow: hidden; }
+body { margin: 0; min-height: 100vh; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, p, dl, dd, figure { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; top: 0; z-index: 100; padding: .6em 1em; background: #fff; color: #000; }
+.skip:focus { left: 0; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+/* YouTube kutusu: kapak + oynat düğmesi; tıklanınca iframe. */
+.yt { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.yt img, .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.yt button {
+  position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border-radius: 50%;
+  border: 0; background: rgba(0, 0, 0, .55); display: grid; place-items: center; color: #fff;
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1.4), background .3s;
+}
+.yt:hover button { transform: scale(1.12); background: rgba(0, 0, 0, .8); }
+
+/* Fotoğraf büyütme */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; background: rgba(5, 5, 5, .94);
+  display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; justify-items: center;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 86vh; object-fit: contain; grid-column: 2; }
+.lightbox button { background: none; border: 0; color: #fff; font-size: 48px; line-height: 1; padding: 8px 14px; }
+.lb-prev { grid-column: 1; grid-row: 1; }
+.lb-next { grid-column: 3; grid-row: 1; }
+.lb-close { position: absolute; top: 10px; right: 14px; }
+.lb-count { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; color: #bbb; font-size: 14px; }
+@media (max-width: 640px) {
+  .lightbox { grid-template-columns: 40px 1fr 40px; }
+  .lightbox button { font-size: 36px; padding: 6px; }
+}
+
+/* Kaydırınca belirme (main.js .in ekler) */
+.rv { opacity: 0; transform: translateY(40px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
+.rv.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Arkada sessiz oynayan fragman */
+.bg-video { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.bg-video iframe { position: absolute; left: 50%; top: 50%; width: max(100%, 177.78vh); height: max(100%, 56.25vw); border: 0;
+  transform: translate(-50%, -50%) scale(1.2); opacity: 0; transition: opacity 1.6s; }
+.bg-video iframe.on { opacity: 1; }

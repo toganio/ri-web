@@ -1,0 +1,901 @@
+{
+ "site": {
+  "title": "Recep İvedik",
+  "url": "https://recepivedik.com",
+  "description": "Şahan Gökbakar'ın yarattığı Recep İvedik serisinin resmi sitesi: yedi filmin fragmanları, hikayeleri, künyeleri ve fotoğrafları.",
+  "company": "Çamaşırhane Film",
+  "companyUrl": "https://camasirhanefilm.com",
+  "email": "info@camasirhanefilm.com",
+  "social": {
+   "youtube": "https://www.youtube.com/user/recepivedikfilmleri",
+   "facebook": "https://tr-tr.facebook.com/recepivedik/"
+  },
+  "heroVideo": "4oBmtMA9RtI",
+  "gise": {
+   "ad": "Box Office Türkiye",
+   "url": "https://boxofficeturkiye.com/tum-zamanlar/seyirci-rekorlari/tum-filmler"
+  }
+ },
+ "labels": {
+  "skip": "İçeriğe geç",
+  "films": "Filmler",
+  "heroSub": "{n} film · {yil}'den beri · {m} milyon seyirci",
+  "goFilm": "Filme git",
+  "trailer": "Fragman",
+  "story": "Hikaye",
+  "credits": "Künye",
+  "poster": "Afiş",
+  "gallery": "Galeri",
+  "prev": "Önceki film",
+  "next": "Sonraki film",
+  "home": "Ana sayfa",
+  "notFound": "Sayfa bulunamadı",
+  "film": "Film",
+  "soon": "Yakında",
+  "audience": "seyirci",
+  "opening": "İlk hafta sonu",
+  "weeks": "{n} hafta vizyonda",
+  "rank": "Tüm zamanlar {n}.",
+  "boxEyebrow": "Gişe",
+  "boxTitle": "Tüm zamanların en çok izlenen iki filmi",
+  "boxTotal": "Sinemada toplam seyirci · {n} film",
+  "boxSource": "Kaynak: {ad}. Sıra: 1989'dan bu yana Türkiye'de en çok izlenen 100 film listesi.",
+  "source": "Kaynak"
+ },
+ "films": [
+  {
+   "no": 8,
+   "slug": "recep-ivedik-8",
+   "title": "Recep İvedik 8",
+   "soon": true,
+   "videos": [
+    {
+     "title": "Bölüm 1: Veresiye – Teaser Fragman",
+     "youtube": "NZkFn5JZjPU"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "_kaynak": "Togan 2026-11-01: \"8'i de ekle, yakında diye\". Afiş yok: TMDB'deki RI8 afişi resmi değil (çizim), kullanılmadı; yerine gömlek desenli 'Yakında' kartı. Teaser resmi YouTube kanalı @recepivedik (\"Recep İvedik 8 Bölüm 1: Veresiye | Teaser Fragman | Disney+\")."
+  },
+  {
+   "no": 7,
+   "slug": "recep-ivedik-7",
+   "title": "Recep İvedik 7",
+   "year": 2022,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "4oBmtMA9RtI"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri7/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "_kaynak": "Afiş TMDB; fragman resmi YouTube kanalı @recepivedik. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
+  },
+  {
+   "no": 6,
+   "slug": "recep-ivedik-6",
+   "title": "Recep İvedik 6",
+   "year": 2019,
+   "release": "8 Kasım 2019",
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "BPXtVB2Qp-4"
+    }
+   ],
+   "story": [
+    "Halk kahramanımız Recep İvedik evinde televizyon izlerken, kapıya gelen postacının teslim ettiği davetiyeyi görünce çok heyecanlanır. Konya'da kuru fasulye festivaline davet edilen Recep, vakit kaybetmeden en yakın arkadaşı Nurullah'ı da yanına alıp yola çıkmak ister. Ancak henüz gezi başlamadan talihsizlikler başlar ve seyahat acentesinin hatası sonucu Recep ve Nurullah kendilerini Konya yerine Kenya’da bulurlar.",
+    "Kenya’ya vardıktan sonra tek amaçları Türkiye’ye geri dönmek olan iki kafadar için artık heyecan dolu bir macera başlamıştır. Afrika’nın uçsuz bucaksız vahşi bozkırlarında Recep ve Nurullah, ne olduğunu anlayamadan iki düşman yerli kabilenin arasında kalırlar. Bu alışık olmadığı vahşi dünyada karşılaştığı tüm zorluklara karşı kendine has yöntemleriyle mücadele eden Recep’in başına yine birbirinden ilginç ve komik olaylar gelecektir.",
+    "Şahan Gökbakar'ın yarattığı rekortmen Recep İvedik serisinin yeni filmi, izleyicilerine her zamanki gibi bol kahkaha ve eğlenceli vakit geçirme garantisi veriyor."
+   ],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "NURULLAH",
+       "NURULLAH ÇELEBİ"
+      ],
+      [
+       "TUR REHBERİ",
+       "SOMER KARVAN"
+      ],
+      [
+       "NAHU ŞEF",
+       "CHIDI BENJAMIN JOHN"
+      ],
+      [
+       "HUNKUTU ŞEF",
+       "KEPSIN MISODI TEKE"
+      ],
+      [
+       "SONGA",
+       "MBAYE DIENG"
+      ],
+      [
+       "ZOUYA",
+       "LORRAINE KADYE"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YAPIM ŞİRKETİ",
+       "ÇAMAŞIRHANE FİLM"
+      ],
+      [
+       "YAPIMCI",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR"
+      ],
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "SENARYO",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR"
+      ],
+      [
+       "YÜRÜTÜCÜ YAPIMCI",
+       "ÇAĞRI ÖZEREN"
+      ],
+      [
+       "UYGULAYICI YAPIMCI",
+       "FURKAN ÇELİK"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "GÉRARD SIMON"
+      ],
+      [
+       "YARDIMCI YÖNETMEN",
+       "MÜGE MANUŞ"
+      ],
+      [
+       "SANAT YÖNETMENİ",
+       "TURAL POLAT"
+      ],
+      [
+       "IŞIK ŞEFİ",
+       "GİRAY GERGİN"
+      ],
+      [
+       "KOSTÜM TASARIM",
+       "SERDAR BAŞBUĞ"
+      ],
+      [
+       "KOSTÜM UYGULAMA",
+       "YONCA PEKBİLİMLİ UZAN"
+      ],
+      [
+       "MAKYAJ",
+       "AHSEN GÜLKAYA"
+      ],
+      [
+       "SET AMİRİ",
+       "RIZA KADAİFÇİOĞLU"
+      ],
+      [
+       "KURGU",
+       "ERSİN EKER"
+      ],
+      [
+       "SES KAYIT",
+       "ÇAĞDAŞ KARAGÖZ"
+      ],
+      [
+       "MİKSAJ",
+       "MICHAEL HINREINER"
+      ],
+      [
+       "RENK",
+       "TRAUDL NICHOLSON"
+      ],
+      [
+       "MÜZİK",
+       "JINGLE JUNGLE"
+      ]
+     ]
+    }
+   ],
+   "poster": {
+    "src": "img/ri6/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [
+    {
+     "src": "img/ri6/afis-1.jpg",
+     "w": 448,
+     "h": 640
+    }
+   ],
+   "photos": [
+    {
+     "src": "img/ri6/foto-01.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-02.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-03.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-04.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-05.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-06.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-07.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-08.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-09.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-10.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-11.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-12.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-13.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-14.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-15.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-16.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-17.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri6/foto-18.jpg",
+     "w": 1070,
+     "h": 720
+    }
+   ],
+   "gise": {
+    "seyirci": 3986797,
+    "ilkHaftaSonu": 1023136,
+    "hafta": 12,
+    "sira": 17,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-6--2014468"
+   },
+   "_kaynak": "recepivedik.com ana sayfası (2026-10-31) ve camasirhanefilm.com Recep İvedik 6 sayfası (künyenin eksik satırları); afiş TMDB"
+  },
+  {
+   "no": 5,
+   "slug": "recep-ivedik-5",
+   "title": "Recep İvedik 5",
+   "year": 2017,
+   "release": "16 Şubat 2017",
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "3TpBMUQfSOU"
+    },
+    {
+     "title": "Kamera Arkası",
+     "youtube": "kEFjhrsevA0"
+    }
+   ],
+   "story": [
+    "Recep İvedik mahalle sakinlerinden İsmet’in ailesine taziye ziyaretinde bulunduğu sırada eşinin düştüğü zor duruma üzülerek ona yardım etmek ister. Şoför İsmet’in son görevini yerine getirmek üzere Nurullah’ı da yanına alarak yola çıkarlar. Bu yolcuğun kısa süreceğini hayal eden Recep genç sporculardan oluşan Milli Takımı yurtdışındaki bir spor organizasyonuna götürdüğünü fark ettiğinde artık geri dönüşü olmayan bir macera başlamıştır.",
+    "Spor organizasyonuna katılacak ekibin başına gelen talihsiz olay sonucu işler karışırken Recep kontrolü eline alır. Kazanmaktan başka bir çaresi olmadığına inanan Recep; olayları kendi yöntemleriyle çözmek isteyince birbirinden komik durumlar ortaya çıkar.",
+    "Şahan Gökbakar’ın yarattığı Recep İvedik karakterinin beşinci macerası yine birbirinden eğlenceli olaylarla bezenmiş eşsiz bir komedi olarak seyircisiyle buluşuyor."
+   ],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "AKİF",
+       "ORKAN VARAN"
+      ],
+      [
+       "KAFİLE BAŞKANI",
+       "DENİZ CEYLAN"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YAPIM ŞİRKETİ",
+       "ÇAMAŞIRHANE FİLM"
+      ],
+      [
+       "YAPIMCI",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR"
+      ],
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "SENARYO",
+       "ŞAHAN GÖKBAKAR / TOGAN GÖKBAKAR"
+      ],
+      [
+       "YÜRÜTÜCÜ YAPIMCI",
+       "ÇAĞRI ÖZEREN"
+      ],
+      [
+       "UYGULAYICI YAPIMCILAR",
+       "EMRAH GAMSIZOĞLU / BARIŞ AYAZTAŞ"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "GÉRARD SIMON"
+      ],
+      [
+       "YARDIMCI YÖNETMEN",
+       "OĞUZ UYDU"
+      ],
+      [
+       "IŞIK ŞEFİ",
+       "GİRAY GERGİN"
+      ],
+      [
+       "KOSTÜM",
+       "MELİS ATINÇ GAMSIZOĞLU"
+      ],
+      [
+       "MAKYAJ",
+       "AHSEN GÜLKAYA"
+      ],
+      [
+       "SET AMİRİ",
+       "AKGÜN ARSLAN"
+      ],
+      [
+       "KURGU",
+       "ERKAN ÖZEKAN"
+      ],
+      [
+       "SES",
+       "HASAN BARAN"
+      ],
+      [
+       "MİKSAJ",
+       "ERKAN ALTINOK"
+      ],
+      [
+       "RENK",
+       "JAMES NORMAN"
+      ],
+      [
+       "MÜZİK",
+       "JINGLE JUNGLE – ÖMER ÖZGÜR"
+      ],
+      [
+       "ÇEKİM YERİ",
+       "İSTANBUL / ANTALYA / ÜSKÜP"
+      ],
+      [
+       "SÜRE",
+       "114’"
+      ],
+      [
+       "VİZYON TARİHİ",
+       "16 ŞUBAT 2017"
+      ],
+      [
+       "DAĞITIM ŞİRKETİ",
+       "MARS DAĞITIM / KINOSTAR"
+      ]
+     ]
+    }
+   ],
+   "poster": {
+    "src": "img/ri5/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [
+    {
+     "src": "img/ri5/afis-1.jpg",
+     "w": 448,
+     "h": 640
+    }
+   ],
+   "photos": [
+    {
+     "src": "img/ri5/foto-01.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-02.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-03.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-04.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-05.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-06.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-07.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-08.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-09.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-10.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-11.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-12.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-13.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-14.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-15.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-16.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-17.jpg",
+     "w": 1070,
+     "h": 720
+    },
+    {
+     "src": "img/ri5/foto-18.jpg",
+     "w": 1070,
+     "h": 720
+    }
+   ],
+   "gise": {
+    "seyirci": 7437050,
+    "ilkHaftaSonu": 1646846,
+    "hafta": 25,
+    "sira": 1,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-5--2013361"
+   },
+   "_kaynak": "recepivedik.com/recep-ivedik-5 (2026-10-31); fragman adresleri camasirhanefilm.com; afiş TMDB"
+  },
+  {
+   "no": 4,
+   "slug": "recep-ivedik-4",
+   "title": "Recep İvedik 4",
+   "year": 2014,
+   "release": "21 Şubat 2014",
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "PraQ0_W8OXI"
+    },
+    {
+     "title": "Uzun Versiyon Fragman",
+     "youtube": "PNXUi3UBV4E"
+    }
+   ],
+   "story": [
+    "Recep İvedik, mahallesindeki çocuk futbol takımına antrenörlük yapmaktadır. Antremanlar için, kendisinin de küçüklüğünden beri futbol oynadığı, mahallenin tek boş alanı olan arsayı kullanmaktadırlar. Recep, bu arsanın bir müteahhite satıldığını öğrenir. Mahalle ve çocuklar için çok değerli olan bu arsayı kaybetmemek için kendi başına satın almaya karar verir. Bulduğu yöntemlerle arsanın parasını toparlayamayınca, çareyi büyük ödüllü bir yarışmaya katılmakta bulan Recep’i zorlu ve kahkaha dolu bir macera beklemektedir."
+   ],
+   "credits": [
+    {
+     "heading": "Oyuncular",
+     "rows": [
+      [
+       "RECEP İVEDİK",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "SUNUCU",
+       "İRFAN KANGI"
+      ],
+      [
+       "TAYLAN",
+       "BARIŞ GÜL"
+      ],
+      [
+       "İBO",
+       "CEM KORKMAZ"
+      ]
+     ]
+    },
+    {
+     "heading": "Künye",
+     "rows": [
+      [
+       "YAPIM ŞİRKETİ",
+       "ÇAMAŞIRHANE FİLM"
+      ],
+      [
+       "YAPIMCI",
+       "EMRAH ÇOBAN"
+      ],
+      [
+       "YÖNETMEN",
+       "TOGAN GÖKBAKAR"
+      ],
+      [
+       "SENARYO",
+       "ŞAHAN GÖKBAKAR"
+      ],
+      [
+       "UYGULAYICI YAPIMCI",
+       "EMRAH GAMSIZOĞLU"
+      ],
+      [
+       "YARDIMCI YÖNETMEN",
+       "MÜGE MANUŞ"
+      ],
+      [
+       "GÖRÜNTÜ YÖNETMENİ",
+       "GERARD SIMON"
+      ],
+      [
+       "KURGU",
+       "ERKAN ÖZEKAN"
+      ],
+      [
+       "MÜZİK",
+       "ÖMER ÖZGÜR"
+      ],
+      [
+       "SANAT YÖNETMENİ",
+       "TURAL POLAT"
+      ],
+      [
+       "KOSTÜM TASARIM",
+       "MELİS ATINÇ GAMSIZOĞLU"
+      ],
+      [
+       "MAKYAJ",
+       "AHSEN GÜLKAYA"
+      ],
+      [
+       "SES KAYIT",
+       "HASAN BARAN"
+      ],
+      [
+       "SES TASARIM",
+       "ERKAN ALTINOK – MUSTAFA DURMA"
+      ],
+      [
+       "TÜRÜ",
+       "KOMEDİ"
+      ],
+      [
+       "ÇEKİM YERİ",
+       "İSTANBUL / MALDİV CUMHURİYETİ"
+      ],
+      [
+       "SÜRE",
+       "117’"
+      ],
+      [
+       "VİZYON TARİHİ",
+       "21 ŞUBAT 2014"
+      ]
+     ]
+    }
+   ],
+   "poster": {
+    "src": "img/ri4/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [
+    {
+     "src": "img/ri4/afis-1.jpg",
+     "w": 560,
+     "h": 800
+    },
+    {
+     "src": "img/ri4/afis-2.jpg",
+     "w": 560,
+     "h": 800
+    }
+   ],
+   "photos": [
+    {
+     "src": "img/ri4/foto-01.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-02.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-03.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-04.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-05.jpg",
+     "w": 600,
+     "h": 900
+    },
+    {
+     "src": "img/ri4/foto-06.jpg",
+     "w": 600,
+     "h": 900
+    },
+    {
+     "src": "img/ri4/foto-07.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-08.jpg",
+     "w": 1024,
+     "h": 683
+    },
+    {
+     "src": "img/ri4/foto-09.jpg",
+     "w": 1024,
+     "h": 550
+    },
+    {
+     "src": "img/ri4/foto-10.jpg",
+     "w": 1024,
+     "h": 549
+    },
+    {
+     "src": "img/ri4/foto-11.jpg",
+     "w": 1024,
+     "h": 547
+    },
+    {
+     "src": "img/ri4/foto-12.jpg",
+     "w": 1024,
+     "h": 545
+    },
+    {
+     "src": "img/ri4/foto-13.jpg",
+     "w": 1024,
+     "h": 547
+    },
+    {
+     "src": "img/ri4/foto-14.jpg",
+     "w": 1024,
+     "h": 549
+    },
+    {
+     "src": "img/ri4/foto-15.jpg",
+     "w": 1024,
+     "h": 539
+    },
+    {
+     "src": "img/ri4/foto-16.jpg",
+     "w": 1024,
+     "h": 547
+    },
+    {
+     "src": "img/ri4/foto-17.jpg",
+     "w": 1024,
+     "h": 544
+    },
+    {
+     "src": "img/ri4/foto-18.jpg",
+     "w": 1024,
+     "h": 553
+    },
+    {
+     "src": "img/ri4/foto-19.jpg",
+     "w": 1024,
+     "h": 552
+    }
+   ],
+   "gise": {
+    "seyirci": 7369098,
+    "ilkHaftaSonu": 1641474,
+    "hafta": 20,
+    "sira": 2,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-4--2011966"
+   },
+   "_kaynak": "recepivedik.com/recep-ivedik-4 (hikaye.html, kunye.png, galeri, afişler; 2026-10-31); oyuncu rolleri ve fragmanlar camasirhanefilm.com; afiş TMDB"
+  },
+  {
+   "no": 3,
+   "slug": "recep-ivedik-3",
+   "title": "Recep İvedik 3",
+   "year": 2010,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "wU7yHUYWqS8"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri3/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "gise": {
+    "seyirci": 3326084,
+    "ilkHaftaSonu": 1153071,
+    "hafta": 23,
+    "sira": 29,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-3--2010356"
+   },
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
+  },
+  {
+   "no": 2,
+   "slug": "recep-ivedik-2",
+   "title": "Recep İvedik 2",
+   "year": 2009,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "jUkm-Qz3wjc"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri2/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "gise": {
+    "seyirci": 4333144,
+    "ilkHaftaSonu": 1209453,
+    "hafta": 24,
+    "sira": 12,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-2--2010100"
+   },
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
+  },
+  {
+   "no": 1,
+   "slug": "recep-ivedik",
+   "title": "Recep İvedik",
+   "year": 2008,
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "ite5gbn55TQ"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "poster": {
+    "src": "img/ri1/afis.jpg",
+    "w": 780,
+    "h": 1170
+   },
+   "posters": [],
+   "photos": [],
+   "gise": {
+    "seyirci": 4301693,
+    "ilkHaftaSonu": 791536,
+    "hafta": 32,
+    "sira": 13,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik--2008041"
+   },
+   "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
+  }
+ ]
+}

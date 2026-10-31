@@ -39,6 +39,8 @@ Genel kurallar: https://github.com/toganio/agents/blob/main/AGENTS.md
   Eski recepivedik.com'dan (bugünkü site ve eski arşiv kopyaları) yalnız **veri** alınır: yazı, künye,
   fotoğraf, afiş, fragman. **Tasarıma dair hiçbir şey alınmaz** (düzen, renk, arka plan görselleri, stil).
   Eski sitede olmayan filmlerin içeriği eski arşivden ya da Togan'dan gelir; uydurma metin yazılmaz.
+  İstisna: filmlerin resmi dikey afişi TMDB'den alınır (eski sitede yok ya da küçük; cms-web'de de böyle,
+  bkz. `docs/kararlar.md`). Afiş filmin kendi resmi görselidir, uydurma içerik değildir.
 - Oturumda serbest kısa kontrol: `npm test` (derler + test eder, saniyeler sürer). Sunucu açılmaz;
   görsel kontrol önizleme kanalında yapılır.
 - Yayın: Firebase Hosting (kurulunca burada yazılır). Canlı adres: henüz yok (bkz. `DURUM.md`).

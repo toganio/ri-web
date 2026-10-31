@@ -1,7 +1,8 @@
-# Firebase Hosting: PR'da her tasarım ayrı önizleme kanalına, main'de seçili tasarım canlıya.
+# Test + Firebase Hosting. PR'da: testler bir kez (ubicloud), sonra her tasarım ayrı önizleme kanalına.
+# main'de: PR'da geçen aynı ağaç yeniden test edilmez, seçili tasarım derlenip canlıya gider.
 # Proje camasirhanefilm-web, site adı firebase.json'da ("recepivedik"; yoksa ilk koşuda açılır).
 # Gereken sır: FIREBASE_SERVICE_ACCOUNT (yoksa yayın adımı atlanır).
-name: Deploy
+name: Test ve yayın
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -13,14 +14,32 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 permissions:
   contents: read
-  checks: write
-  pull-requests: write
 jobs:
+  test:
+    if: github.event_name != 'push' && github.event.pull_request.draft != true
+    runs-on: ubicloud-standard-2
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+
   deploy:
-    if: github.event.pull_request.draft != true && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    needs: test
+    # main'e push'ta test işi atlanır (PR'da geçti); atlanmış test yayını engellemez, başarısız test engeller.
+    if: >-
+      always() && needs.test.result != 'failure' && needs.test.result != 'cancelled' &&
+      github.event.pull_request.draft != true &&
+      (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
     # Sır kullandığı için GitHub makinesinde kalır.
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
     strategy:
       fail-fast: false
       matrix:
@@ -30,11 +49,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm test
-      - if: matrix.theme != 'varsayilan'
+      - name: Derle
         run: node scripts/build.mjs
         env:
-          THEME: ${{ matrix.theme }}
+          THEME: ${{ matrix.theme != 'varsayilan' && matrix.theme || '' }}
       - id: sir
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}

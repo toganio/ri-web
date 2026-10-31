@@ -25,7 +25,10 @@
 - 4, 5, 6: metin ve fotoğraflar recepivedik.com'dan. Eski sitedeki yatay "afiş" görselleri (1600x810) aslında sayfa arka
   planıydı, tasarım sayıldığı için alınmadı. RI4 künyesi eski sitede resimdi (`kunye.png`), yazıya geçirildi
   (`tests/kaynak/recepivedik.com_recep-ivedik-4_kunye.txt`). Eksik künye satırları ve oyuncu rolleri camasirhanefilm.com'dan.
-- Dikey afişler TMDB'den (780x1170), eski sitedeki afişler daha küçüktü.
+- Dikey afişler yedi filmin hepsi için TMDB'den (780x1170): eski sitede 1, 2, 3 ve 7'nin afişi yok, 4-5-6'nınki küçük.
+  Afiş filmin resmi görselidir, uydurma içerik sayılmaz (cms-web'de de aynı yol izlendi). Kural `AGENTS.md`'ye yazıldı.
+- GitHub maliyeti: testler PR'da bir kez (ubicloud) koşar; önizleme işleri yalnız derler, main'de test tekrarlanmaz
+  (`deploy.yml` tek iş akışı, `ci.yml` kaldırıldı).
 - Yazım düzeltmeleri: "MİKYAJ" → "MİKSAJ", "kulanmaktadırlar" → "kullanmaktadırlar" (testte `DUZELTME` listesi).
 - Firebase: yeni proje açılmadı; camasirhanefilm-web projesinde ayrı site (`recepivedik`). Yükleme hesabı aynı
   (githubdeploy); anahtar Togan tarafından GitHub sırrına konur, depoda tutulmaz.

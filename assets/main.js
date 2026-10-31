@@ -36,9 +36,12 @@
       img.src = links[i].href;
       count.textContent = `${i + 1} / ${links.length}`;
     };
+    // Açıkken sayfanın geri kalanı etkisiz (inert): klavye odağı kutunun dışına çıkmaz.
+    const behind = () => [...document.body.children].filter((el) => el !== box);
     const close = () => {
       box.hidden = true;
       document.documentElement.classList.remove('noscroll');
+      behind().forEach((el) => (el.inert = false));
       links[i].focus();
     };
     links.forEach((a, n) =>
@@ -47,6 +50,7 @@
         show(n);
         box.hidden = false;
         document.documentElement.classList.add('noscroll');
+        behind().forEach((el) => (el.inert = true));
         box.querySelector('.lb-close').focus();
       }),
     );
@@ -59,6 +63,13 @@
       if (e.key === 'Escape') close();
       if (e.key === 'ArrowLeft') show(i - 1);
       if (e.key === 'ArrowRight') show(i + 1);
+      if (e.key === 'Tab') {
+        // inert desteklemeyen eski tarayıcılar için odak kutunun düğmeleri arasında döner.
+        const btns = [...box.querySelectorAll('button')];
+        const at = btns.indexOf(document.activeElement);
+        e.preventDefault();
+        btns[(at + (e.shiftKey ? -1 : 1) + btns.length) % btns.length].focus();
+      }
     });
     let x0 = null;
     box.addEventListener('touchstart', (e) => (x0 = e.touches[0].clientX), { passive: true });

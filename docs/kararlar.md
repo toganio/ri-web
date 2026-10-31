@@ -55,3 +55,17 @@
 - 2026-11-01: Togan *"o rengarenk hâlini sevmedim"*, *"gömlek desenini kullanarak"*. Filmlere ayrı renk verme (gökkuşağı)
   kaldırıldı; renkler yalnız gömlekten: turuncu `#f9420f`, sarı `#fc9a12`, bordo `#6d0000`, krem zemin. Ana sayfanın üst
   bölümü gömlek kumaşı (beyaz başlık, bordo gölge); film bölümleri krem / açık turuncu sırayla, dev numaralar turuncu ve sarı.
+- 2026-11-01: Togan *"8'i de ekle, yakında diye"*. Recep İvedik 8 sekizinci film olarak "Yakında" eklendi: afiş yerine gömlek
+  desenli "Yakında" kartı (TMDB'deki RI8 afişi resmi değil, çizim), resmi YouTube kanalındaki teaser (NZkFn5JZjPU).
+- 2026-11-01: Togan *"burdaki yazım daha iyi, bunun gömlek desenlisini yap"* ve *"Gotham ile yazabilir Recep İvedik"*. Ana
+  sayfa başlığı gömlek kumaşı üstünde düz krem harfler. Gotham ücretli bir yazı tipi; web lisans dosyaları gelene kadar ona en
+  yakın ücretsiz yazı tipi Montserrat (900) kullanılıyor. Dosyalar gelince `--logo` değişkenine eklenir.
+- 2026-11-01: Togan *"arkada fragman oynaması güzel, sadece ilk açılışta gömlek deseni olur"* ve *"ana sayfada da Recep 7'nin
+  fragmanı oynasın"*. Ana sayfa önce gömlek kumaşıyla açılır, sonra arkada sessiz Recep İvedik 7 fragmanı (resmi kanal,
+  4oBmtMA9RtI, `site.heroVideo`) oynar; aşağısı açık renkli kalır.
+- 2026-11-01: Togan *"her filmin ne kadar izlendiğini yaz ve öne çıkar bu başarıyı, rakamları Box Office Türkiye'den çek"*.
+  Ana sayfaya gişe bölümü (toplam 30.753.866 seyirci, filmler çok izlenenden aza, tüm zamanlar sırası), her bölüme ve film
+  sayfasına seyirci sayısı eklendi. Rakamlar 2026-10-31'de Box Office Türkiye film sayfalarından ve "Tüm Filmler Seyirci
+  Rekoru – İlk 100 (1989'dan günümüze)" listesinden alındı (`tests/kaynak/boxofficeturkiye.com_seyirci.txt`; test her
+  sayıyı oradan doğrular). Recep İvedik 7'nin Box Office Türkiye'de sinema kaydı yok, sayı yazılmadı. Aynı rakamlar
+  sahangokbakar.com'da da kullanılıyor.

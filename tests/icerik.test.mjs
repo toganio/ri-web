@@ -4,6 +4,7 @@
 // 2) Derlenen her sayfa kendi filminin bütün metnini içermeli; görseller mevcut olmalı; satır içi stil
 //    ve dış betik olmamalı (CSP).
 // 3) Her tasarım derlenebilmeli.
+// 4) Gişe rakamları (Togan 2026-11-01) Box Office Türkiye sayfalarının kopyasında birebir geçmeli.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
@@ -55,8 +56,9 @@ test('içerik dosyasının yapısı', () => {
   assert.equal(new Set(nos).size, nos.length, 'film numaraları tekrar ediyor');
   for (const f of c.films) {
     assert.match(f.slug, /^[a-z0-9-]+$/);
-    assert.ok(f.title && f.year && Array.isArray(f.story) && f.poster?.src, `${f.slug}: eksik alan`);
-    for (const im of [f.poster, ...(f.posters || []), ...(f.photos || [])])
+    // "Yakında" filminin yılı ve afişi henüz yok (Togan 2026-11-01); diğerlerinde zorunlu.
+    assert.ok(f.title && Array.isArray(f.story) && (f.soon || (f.year && f.poster?.src)), `${f.slug}: eksik alan`);
+    for (const im of [f.poster, ...(f.posters || []), ...(f.photos || [])].filter(Boolean))
       assert.ok(existsSync(join(ROOT, im.src)), `${f.slug}: görsel yok: ${im.src}`);
   }
 });
@@ -75,6 +77,25 @@ test('metinler eski sitede geçiyor (uydurma metin yok)', () => {
   assert.deepEqual(eksik, [], `Kaynakta bulunmayan içerik:\n${eksik.join('\n')}`);
 });
 
+const nokta = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+test('gişe rakamları Box Office Türkiye kopyasında geçiyor', () => {
+  const bot = readFileSync(join(kaynakDir, 'boxofficeturkiye.com_seyirci.txt'), 'utf8');
+  const eksik = [];
+  for (const f of c.films.filter((x) => x.gise)) {
+    const g = f.gise;
+    const blok = bot.split(g.url)[1]?.split('https://')[0] || '';
+    if (!blok) eksik.push(`${f.slug}: kaynak sayfası yok: ${g.url}`);
+    if (!blok.includes(`İlk Hafta Sonu ${nokta(g.ilkHaftaSonu)} Toplam (${g.hafta} Hafta) ${nokta(g.seyirci)}`))
+      eksik.push(`${f.slug}: seyirci/ilk hafta sonu/hafta tutmuyor`);
+    // Rekor listesindeki satır: "<sıra> <film> <gün> <ay> <yıl> <dağıtımcı> <hafta> <seyirci>"
+    const re = (x) => String(x).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (!new RegExp(` ${g.sira} ${re(f.title)} \\d{1,2} \\S+ \\d{4} \\D+ ${g.hafta} ${re(nokta(g.seyirci))}(?: |$)`, 'm').test(bot))
+      eksik.push(`${f.slug}: tüm zamanlar sırası ${g.sira} tutmuyor`);
+  }
+  assert.ok(bot.includes(c.site.gise.url), 'rekor listesi kaynağı yok');
+  assert.deepEqual(eksik, [], eksik.join('\n'));
+});
+
 const themes = readdirSync(join(ROOT, 'scripts', 'themes')).map((f) => f.replace(/\.mjs$/, ''));
 for (const theme of themes) {
   test(`tasarım "${theme}" derleniyor ve sayfalar içeriği taşıyor`, () => {
@@ -89,6 +110,10 @@ for (const theme of themes) {
       for (const sec of f.credits || []) for (const [, v] of sec.rows) assert.ok(metin.includes(norm(v)), `${theme}/${f.slug}: künye eksik: ${v}`);
       for (const v of f.videos || []) assert.ok(html.includes(v.youtube), `${theme}/${f.slug}: fragman eksik`);
       for (const ph of f.photos || []) assert.ok(html.includes(`/${ph.src}`), `${theme}/${f.slug}: fotoğraf eksik`);
+      if (f.gise) {
+        assert.ok(html.includes(nokta(f.gise.seyirci)) && home.includes(nokta(f.gise.seyirci)), `${theme}/${f.slug}: seyirci sayısı eksik`);
+        assert.ok(html.includes(f.gise.url), `${theme}/${f.slug}: gişe kaynağı bağlantısı eksik`);
+      }
     }
     for (const p of ['index.html', '404.html', ...c.films.map((f) => `${f.slug}/index.html`)]) {
       const html = page(p);

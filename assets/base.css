@@ -46,3 +46,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Arkada sessiz oynayan fragman */
+.bg-video { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.bg-video iframe { position: absolute; left: 50%; top: 50%; width: max(100%, 177.78vh); height: max(100%, 56.25vw); border: 0;
+  transform: translate(-50%, -50%) scale(1.2); opacity: 0; transition: opacity 1.6s; }
+.bg-video iframe.on { opacity: 1; }

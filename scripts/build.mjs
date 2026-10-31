@@ -50,6 +50,19 @@ const parts = {
   href,
   site: c.site,
   labels: c.labels,
+  // Afişi olmayan "yakında" filmi için gömlek desenli kart (numara + "Yakında").
+  poster: (f, attrs = '') =>
+    f.poster
+      ? parts.img(f.poster, f.title, '', attrs)
+      : `<span class="soon-card" role="img" aria-label="${esc(`${f.title} – ${c.labels.soon}`)}"><b>${f.no}</b><span>${esc(up(c.labels.soon))}</span></span>`,
+  // Yılı ya da "Yakında".
+  when: (f) => (f.soon ? c.labels.soon : f.release || String(f.year)),
+  released: films.filter((f) => !f.soon),
+  // Gişe (Box Office Türkiye, tests/kaynak/boxofficeturkiye.com_seyirci.txt): 7437050 → "7.437.050", toplam → "30,7".
+  num: (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
+  milyon: (n) => String(Math.floor(n / 1e5) / 10).replace('.', ','),
+  gise: films.filter((f) => f.gise),
+  giseToplam: films.reduce((t, f) => t + (f.gise?.seyirci || 0), 0),
   img: (p, alt = '', cls = '', attrs = '') =>
     `<img src="/${p.src}" width="${p.w}" height="${p.h}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''} loading="lazy" decoding="async"${attrs}>`,
   // YouTube oynatıcısı tıklanınca yüklenir (youtube-nocookie); sayfa hızlı açılır.
@@ -118,7 +131,7 @@ for (const f of films) {
   write(
     `${f.slug}/index.html`,
     page({
-      title: `${f.title} (${f.year}) – ${c.site.title}`,
+      title: f.soon ? `${f.title} (${c.labels.soon}) – ${c.site.title}` : `${f.title} (${f.year}) – ${c.site.title}`,
       description: f.story[0] || c.site.description,
       path: href(f),
       body: theme.film(parts, f),

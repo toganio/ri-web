@@ -9,12 +9,17 @@
   "social": {
    "youtube": "https://www.youtube.com/user/recepivedikfilmleri",
    "facebook": "https://tr-tr.facebook.com/recepivedik/"
+  },
+  "heroVideo": "4oBmtMA9RtI",
+  "gise": {
+   "ad": "Box Office Türkiye",
+   "url": "https://boxofficeturkiye.com/tum-zamanlar/seyirci-rekorlari/tum-filmler"
   }
  },
  "labels": {
   "skip": "İçeriğe geç",
   "films": "Filmler",
-  "heroSub": "{n} film · {yil}'den beri",
+  "heroSub": "{n} film · {yil}'den beri · {m} milyon seyirci",
   "goFilm": "Filme git",
   "trailer": "Fragman",
   "story": "Hikaye",
@@ -25,15 +30,45 @@
   "next": "Sonraki film",
   "home": "Ana sayfa",
   "notFound": "Sayfa bulunamadı",
-  "film": "Film"
+  "film": "Film",
+  "soon": "Yakında",
+  "audience": "seyirci",
+  "opening": "İlk hafta sonu",
+  "weeks": "{n} hafta vizyonda",
+  "rank": "Tüm zamanlar {n}.",
+  "boxEyebrow": "Gişe",
+  "boxTitle": "Tüm zamanların en çok izlenen iki filmi",
+  "boxTotal": "Sinemada toplam seyirci · {n} film",
+  "boxSource": "Kaynak: {ad}. Sıra: 1989'dan bu yana Türkiye'de en çok izlenen 100 film listesi.",
+  "source": "Kaynak"
  },
  "films": [
+  {
+   "no": 8,
+   "slug": "recep-ivedik-8",
+   "title": "Recep İvedik 8",
+   "soon": true,
+   "videos": [
+    {
+     "title": "Bölüm 1: Veresiye – Teaser Fragman",
+     "youtube": "NZkFn5JZjPU"
+    }
+   ],
+   "story": [],
+   "credits": [],
+   "_kaynak": "Togan 2026-11-01: \"8'i de ekle, yakında diye\". Afiş yok: TMDB'deki RI8 afişi resmi değil (çizim), kullanılmadı; yerine gömlek desenli 'Yakında' kartı. Teaser resmi YouTube kanalı @recepivedik (\"Recep İvedik 8 Bölüm 1: Veresiye | Teaser Fragman | Disney+\")."
+  },
   {
    "no": 7,
    "slug": "recep-ivedik-7",
    "title": "Recep İvedik 7",
    "year": 2022,
-   "videos": [],
+   "videos": [
+    {
+     "title": "Fragman",
+     "youtube": "4oBmtMA9RtI"
+    }
+   ],
    "story": [],
    "credits": [],
    "poster": {
@@ -43,7 +78,7 @@
    },
    "posters": [],
    "photos": [],
-   "_kaynak": "Afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
+   "_kaynak": "Afiş TMDB; fragman resmi YouTube kanalı @recepivedik. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
   },
   {
    "no": 6,
@@ -282,6 +317,13 @@
      "h": 720
     }
    ],
+   "gise": {
+    "seyirci": 3986797,
+    "ilkHaftaSonu": 1023136,
+    "hafta": 12,
+    "sira": 17,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-6--2014468"
+   },
    "_kaynak": "recepivedik.com ana sayfası (2026-10-31) ve camasirhanefilm.com Recep İvedik 6 sayfası (künyenin eksik satırları); afiş TMDB"
   },
   {
@@ -517,6 +559,13 @@
      "h": 720
     }
    ],
+   "gise": {
+    "seyirci": 7437050,
+    "ilkHaftaSonu": 1646846,
+    "hafta": 25,
+    "sira": 1,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-5--2013361"
+   },
    "_kaynak": "recepivedik.com/recep-ivedik-5 (2026-10-31); fragman adresleri camasirhanefilm.com; afiş TMDB"
   },
   {
@@ -752,6 +801,13 @@
      "h": 552
     }
    ],
+   "gise": {
+    "seyirci": 7369098,
+    "ilkHaftaSonu": 1641474,
+    "hafta": 20,
+    "sira": 2,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-4--2011966"
+   },
    "_kaynak": "recepivedik.com/recep-ivedik-4 (hikaye.html, kunye.png, galeri, afişler; 2026-10-31); oyuncu rolleri ve fragmanlar camasirhanefilm.com; afiş TMDB"
   },
   {
@@ -774,6 +830,13 @@
    },
    "posters": [],
    "photos": [],
+   "gise": {
+    "seyirci": 3326084,
+    "ilkHaftaSonu": 1153071,
+    "hafta": 23,
+    "sira": 29,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-3--2010356"
+   },
    "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
   },
   {
@@ -796,6 +859,13 @@
    },
    "posters": [],
    "photos": [],
+   "gise": {
+    "seyirci": 4333144,
+    "ilkHaftaSonu": 1209453,
+    "hafta": 24,
+    "sira": 12,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik-2--2010100"
+   },
    "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
   },
   {
@@ -818,6 +888,13 @@
    },
    "posters": [],
    "photos": [],
+   "gise": {
+    "seyirci": 4301693,
+    "ilkHaftaSonu": 791536,
+    "hafta": 32,
+    "sira": 13,
+    "url": "https://boxofficeturkiye.com/film/recep-ivedik--2008041"
+   },
    "_kaynak": "Fragman recepivedik.com ana sayfasındaki 'Önceki Filmler' menüsünden; afiş TMDB. Hikaye ve künye eski sitede ve Wayback arşivinde yok; Togan 2026-11-01: şimdilik afiş ve fragmanla kalsın."
   }
  ]

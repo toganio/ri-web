@@ -1,4 +1,4 @@
-// Ortak davranışlar: tıklayınca yüklenen YouTube, fotoğraf büyütme, kaydırınca beliren öğeler, paralaks.
+// Ortak davranışlar: tıklayınca yüklenen YouTube, fotoğraf büyütme, kaydırınca beliren öğeler, gişe sayacı, paralaks, arkada sessiz fragman.
 // Satır içi betik yok (CSP); her şey bu dosyada.
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,6 +98,37 @@
     rv.forEach((el) => io.observe(el));
   }
 
+  // Gişe: görününce sayı sıfırdan sayarak artar (data-count), çubuklar dolar (data-w → --w). Hareket azaltma açıksa hemen son hal.
+  const dots = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  const counters = document.querySelectorAll('[data-count]');
+  const bars = document.querySelectorAll('[data-w]');
+  const fillBar = (el) => el.style.setProperty('--w', el.dataset.w);
+  const count = (el) => {
+    const end = Number(el.dataset.count);
+    const t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 1800);
+      el.textContent = dots(Math.round(end * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if (reduce || !('IntersectionObserver' in window)) bars.forEach(fillBar);
+  else {
+    const io3 = new IntersectionObserver(
+      (es) =>
+        es.forEach((en) => {
+          if (!en.isIntersecting) return;
+          if (en.target.dataset.count) count(en.target);
+          else fillBar(en.target);
+          io3.unobserve(en.target);
+        }),
+      { rootMargin: '0px 0px -10% 0px' },
+    );
+    counters.forEach((el) => io3.observe(el));
+    bars.forEach((el) => io3.observe(el));
+  }
+
   // Kaydırma ile hareket eden öğeler: data-speed (paralaks). Değer --p değişkenine yazılır.
   const par = [...document.querySelectorAll('[data-speed]')];
   if (par.length && !reduce) {
@@ -124,6 +155,32 @@
   };
   addEventListener('scroll', setScroll, { passive: true });
   setScroll();
+
+  // Arkada sessiz oynayan fragman (kontrolsüz, döngüde). Video yalnız gerçekten oynamaya başlayınca belirir;
+  // oynamazsa zemin olduğu gibi kalır. Hareket azaltma ya da veri tasarrufu açıksa hiç yüklenmez.
+  const quiet = reduce || (navigator.connection && navigator.connection.saveData);
+  const YT = 'https://www.youtube-nocookie.com';
+  document.querySelectorAll('[data-bgvideo]').forEach((el) => {
+    const box = el.querySelector('.bg-video');
+    const id = el.dataset.bgvideo;
+    if (quiet || !box || !id) return;
+    const f = document.createElement('iframe');
+    f.src = `${YT}/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&loop=1&playlist=${encodeURIComponent(id)}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+    f.title = '';
+    f.tabIndex = -1;
+    f.allow = 'autoplay; encrypted-media';
+    f.addEventListener('load', () => f.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), YT));
+    box.replaceChildren(f);
+  });
+  addEventListener('message', (e) => {
+    if (e.origin !== YT || typeof e.data !== 'string') return;
+    let d;
+    try { d = JSON.parse(e.data); } catch { return; }
+    if (!d.info || d.info.playerState !== 1) return;
+    document.querySelectorAll('.bg-video iframe').forEach((f) => {
+      if (f.contentWindow === e.source) setTimeout(() => f.classList.add('on'), 500);
+    });
+  });
 
   // İmlece göre hafif eğilen sahne (data-tilt): --mx, --my (-1 … 1).
   const tilt = document.querySelector('[data-tilt]');

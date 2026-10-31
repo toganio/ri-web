@@ -74,3 +74,6 @@
   aynı yolla bağlanıyor (`.github/workflows/alan-adi.yml`): GoDaddy DNS'te yalnız web satırları değişir, e-posta (MX, SPF)
   satırlarına dokunulmaz. SPF'teki `a` kuralı A kaydı değişince Firebase adresini gösterir; e-posta `include:secureserver.net`
   ile gittiği için etkilenmez.
+- 2026-11-01: Togan *"ilk tasarımda böyle bar yoktu"* (üstteki buzlu krem şerit). Üst çubuğun zemini kaldırıldı: logo ve film
+  numaraları doğrudan sayfanın üstünde. Ana sayfanın gömlek/fragman bölümündeyken logo krem, aşağıda koyu; numaralar beyaz
+  yuvarlak, bulunulan film bordo.

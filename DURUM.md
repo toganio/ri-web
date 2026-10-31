@@ -1,6 +1,6 @@
 # DURUM — kaldığımız yer
 
-_Son güncelleme: 2026-11-01 01:55 (Türkiye saati) — claude.ai/code bulut oturumu_
+_Son güncelleme: 2026-11-01 02:00 (Türkiye saati) — claude.ai/code bulut oturumu_
 
 ## Canlı
 - 2026-11-01'den beri: https://recepivedik.web.app (Togan: "tamam böyle deploy et"). PR #1 birleşti.
@@ -16,12 +16,14 @@ _Son güncelleme: 2026-11-01 01:55 (Türkiye saati) — claude.ai/code bulut otu
 - 1, 2, 3 ve 7: yazı arşivde yok; Togan "şimdilik böyle kalsın" dedi (afiş + fragman).
 
 ## Şu an açık iş
-- Dal `claude/project-thread-utmr6q`: alan adı iş akışı (`.github/workflows/alan-adi.yml`, elle çalışır).
+- Firebase'e recepivedik.com ve www eklendi (PR #2, `alan-adi.yml` koşusu 41250127037). GoDaddy DNS bekleniyor.
 
 ## Sıradaki adım
-1. Firebase'e recepivedik.com ve www eklenir; gereken TXT/A kayıtları iş akışı çıktısından alınır.
-2. Togan GoDaddy DNS'te yalnız `@` A, `@` TXT (hosting-site) ve `www` satırlarını değiştirir; MX/SPF'e dokunulmaz.
-3. Sertifika gelince https://recepivedik.com ölçülür.
+GoDaddy DNS (yalnız bu üç satır; MX ve `v=spf1` TXT satırına dokunulmaz):
+1. `@` A: 173.201.188.207 → **199.36.158.100**
+2. `@` TXT ekle: **hosting-site=recepivedik**
+3. `www` CNAME: recepivedik.com → **recepivedik.web.app**
+Sonra `alan-adi.yml` elle çalıştırılır; sertifika gelince https://recepivedik.com ölçülür.
 
 ## Togan'dan beklenen
 - GoDaddy DNS'te birkaç satır değişikliği (adım adım tarif edilir).

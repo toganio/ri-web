@@ -98,6 +98,21 @@
     rv.forEach((el) => io.observe(el));
   }
 
+  // Üst çubuğun zemini yok: ana sayfanın gömlek/fragman bölümü üstteyken logo krem, aşağıda koyu (.on-hero).
+  const hero = document.querySelector('.hero');
+  const bar = document.querySelector('.bar');
+  // Kaydırmada ölçülür (IntersectionObserver'ın yüzde payı bazı tarayıcılarda genişliğe göre hesaplanıyor).
+  if (hero && bar) {
+    let tick = false;
+    const check = () => {
+      bar.classList.toggle('on-hero', hero.getBoundingClientRect().bottom > bar.offsetHeight);
+      tick = false;
+    };
+    addEventListener('scroll', () => !tick && (tick = requestAnimationFrame(check)), { passive: true });
+    addEventListener('resize', check);
+    check();
+  }
+
   // Gişe: görününce sayı sıfırdan sayarak artar (data-count), çubuklar dolar (data-w → --w). Hareket azaltma açıksa hemen son hal.
   const dots = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   const counters = document.querySelectorAll('[data-count]');

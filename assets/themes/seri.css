@@ -34,14 +34,20 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 .progress { position: fixed; top: 0; left: 0; height: 4px; width: 100%; z-index: 80;
   background: var(--gomlek) 0 0 / 60px 100%;
   transform-origin: 0 50%; transform: scaleX(var(--scroll, 0)); }
+/* Togan 2026-11-01: "ilk tasarımda böyle bar yoktu". Zeminsiz: logo ve numaralar doğrudan sayfanın üstünde durur.
+   Ana sayfanın gömlek/fragman bölümündeyken logo krem (.on-hero; assets/main.js bölüm geçince kaldırır). */
 .bar { position: fixed; top: 0; left: 0; right: 0; z-index: 70; display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 12px var(--pad); background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); }
-.brand { font: 900 19px/1 var(--logo); letter-spacing: -.01em; }
+  gap: 16px; padding: 14px var(--pad); pointer-events: none; }
+.bar a { pointer-events: auto; }
+.brand { font: 900 19px/1 var(--logo); letter-spacing: -.01em; transition: color .3s, text-shadow .3s; }
+.bar.on-hero .brand { color: #f6f1e8; text-shadow: 0 2px 14px rgba(40, 0, 0, .55); }
+.bar.on-hero .nums a:not(:hover):not([aria-current]) { box-shadow: 0 4px 14px rgba(40, 0, 0, .35); }
 .nums { display: flex; gap: 6px; }
 .nums a { display: grid; place-items: center; width: 34px; height: 34px; font: 400 17px/1 var(--display); border-radius: 50%;
-  background: var(--tint); transition: background .25s, transform .3s cubic-bezier(.2, .8, .2, 1.5); }
+  background: #fff; box-shadow: 0 2px 8px rgba(60, 40, 10, .12); transition: background .25s, transform .3s cubic-bezier(.2, .8, .2, 1.5); }
 .nums a:hover, .nums a[aria-current] { background: var(--turuncu); color: #fff; transform: translateY(-2px) rotate(-8deg) scale(1.1); }
+/* Bulunduğun film bordo: film sayfasındaki dev turuncu numaranın üstünde de görünsün. */
+.nums a[aria-current] { background: var(--bordo); }
 @media (max-width: 520px) { .brand { font-size: 14px; } .nums a { width: 27px; height: 27px; font-size: 14px; } .nums { gap: 3px; } }
 
 /* Ana sayfa: gömlek kumaşı zemin, yelpaze ve dev başlık */
@@ -96,7 +102,7 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 .ch { display: inline-block; animation: drop .9s cubic-bezier(.2, .9, .3, 1.35) both; text-shadow: .045em .045em 0 var(--turuncu); }
 .d0 { animation-delay: 0.60s; } .d1 { animation-delay: 0.65s; } .d2 { animation-delay: 0.70s; } .d3 { animation-delay: 0.75s; } .d4 { animation-delay: 0.80s; } .d5 { animation-delay: 0.85s; } .d6 { animation-delay: 0.90s; } .d7 { animation-delay: 0.95s; } .d8 { animation-delay: 1.00s; } .d9 { animation-delay: 1.05s; } .d10 { animation-delay: 1.10s; } .d11 { animation-delay: 1.15s; } .d12 { animation-delay: 1.20s; } .d13 { animation-delay: 1.25s; } .d14 { animation-delay: 1.30s; } .d15 { animation-delay: 1.35s; } .d16 { animation-delay: 1.40s; } .d17 { animation-delay: 1.45s; } .d18 { animation-delay: 1.50s; } .d19 { animation-delay: 1.55s; } .d20 { animation-delay: 1.60s; } .d21 { animation-delay: 1.65s; } .d22 { animation-delay: 1.70s; } .d23 { animation-delay: 1.75s; } .d24 { animation-delay: 1.80s; }
 @keyframes drop { from { transform: translateY(-80%) rotate(-12deg); opacity: 0; } to { transform: none; opacity: 1; } }
-.hero-sub { position: absolute; z-index: 2; bottom: 88px; left: 0; right: 0; text-align: center; letter-spacing: .3em; font-size: 13px;
+.hero-sub { position: absolute; z-index: 2; bottom: 88px; left: 0; right: 0; padding: 0 var(--pad); text-align: center; letter-spacing: .3em; font-size: 13px; text-wrap: balance;
   font-weight: 700; color: #f6f1e8; text-shadow: 0 1px 8px rgba(50, 0, 0, .6); }
 .scroll-cue { position: absolute; z-index: 2; bottom: 28px; left: 50%; width: 26px; height: 42px; margin-left: -13px; border: 2px solid #fff;
   border-radius: 14px; }
@@ -276,4 +282,5 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 .nf { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px var(--pad); }
 .nf .mega { margin-top: 0; }
 
-@media (max-width: 700px) { .hero .mega { font-size: 19vw; line-height: .95; margin-top: 30vh; } .hero .mega .w { display: block; } }
+@media (max-width: 700px) { .hero .mega { font-size: 19vw; line-height: .95; margin-top: 30vh; } .hero .mega .w { display: block; }
+  .hero-sub { font-size: 11px; letter-spacing: .2em; line-height: 1.8; } }

@@ -2,9 +2,9 @@
 // açılan afişler ve dev başlık, gişe rekorları, ardından her film kendi numarasıyla tam ekran bir bölüm. Film sayfasında dev numara, afiş, fragman,
 // gişe, hikaye, künye ve galeri. Renkler yalnız Recep'in gömleğinden (assets/themes/seri.css).
 // CSP satır içi stile izin vermez; değişkenler assets/main.js içinde style.setProperty ile verilir.
-const header = (p, current) => `<a class="skip" href="#icerik">${p.esc(p.labels.skip)}</a>
+const header = (p, current, hero = false) => `<a class="skip" href="#icerik">${p.esc(p.labels.skip)}</a>
 <div class="progress" aria-hidden="true"></div>
-<header class="bar">
+<header class="bar${hero ? ' on-hero' : ''}">
   <a class="brand" href="/" aria-label="${p.esc(p.site.title)}">${p.esc(p.up(p.site.title))}</a>
   <nav class="nums" aria-label="${p.esc(p.labels.films)}">
     ${p.films
@@ -84,7 +84,7 @@ export default {
     const newest = [...p.films].reverse();
     // Togan 2026-11-01: açılışta gömlek kumaşı, ardından arkada Recep İvedik 7 fragmanı sessiz oynar (site.heroVideo).
     const heroVideo = p.site.heroVideo || newest.find((f) => f.videos?.length)?.videos[0].youtube;
-    return `${header(p)}
+    return `${header(p, null, true)}
 <main id="icerik">
   <section class="hero" data-tilt data-bgvideo="${p.esc(heroVideo || '')}">
     <div class="bg-video" aria-hidden="true"></div>

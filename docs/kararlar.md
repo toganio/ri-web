@@ -43,3 +43,7 @@
   yol uygulandı: künye (oyuncu-rol, yönetmen, yapımcı, senaryo, görüntü, kurgu, müzik, yapım şirketi, süre/vizyon tarihi)
   Türkçe Vikipedi'den, kaynak vikimetni `tests/kaynak/tr.wikipedia.org_*.txt`. Hikaye yazısı uydurulmaz, Togan'dan beklenir.
   RI1 vizyon tarihi Vikipedi'de çelişkili (21 ve 22 Şubat 2008), yazılmadı. RI7 Disney+'ta yayımlandı (9 Aralık 2022).
+- 2026-11-01: RI1, RI2, RI3 afişleri TMDB'deki özgün Türkçe sinema afişleriyle değiştirildi (önceki dosyalar yakınlaştırılmış,
+  kesik kopyalardı; Togan sahangokbakar.com'da "garip" buldu). Kaynak: TMDB 7qk6BU7YFXcjV9Rp7EjV6qtZaXj (RI1),
+  wymzbCrbU0r0mcRZrkWAz9Yvwy1 (RI2), 1eB9KYqsaLtXw61DD2iyrkIZKQH (RI3). TMDB'deki 8j90ts… ve xjudWE… afişleri yapay zekâ
+  üretimi, kullanılmaz.

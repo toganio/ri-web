@@ -116,6 +116,17 @@ for (const theme of themes) {
         assert.ok(!/boxofficeturkiye/i.test(html) && !/boxofficeturkiye/i.test(home), `${theme}/${f.slug}: Box Office Türkiye bağlantısı var`);
       }
     }
+    // Arama motoru ve yayın ayarları (camasirhanefilm.com'daki sıkılaştırmalarla aynı, 2026-11-01).
+    const sayfalar = ['/', ...c.films.map((f) => `/${f.slug}/`)];
+    const harita = page('sitemap.xml');
+    for (const p of sayfalar) {
+      assert.ok(harita.includes(`<loc>${c.site.url}${p}</loc>`), `${theme}: site haritasında ${p} yok`);
+      assert.ok(page(`${p.slice(1)}index.html`).includes(`<link rel="canonical" href="${c.site.url}${p}">`), `${theme}${p}: canonical yanlış`);
+    }
+    assert.ok(page('robots.txt').includes(`Sitemap: ${c.site.url}/sitemap.xml`), 'robots.txt site haritasını göstermiyor');
+    const nf = page('404.html');
+    assert.ok(nf.includes('<meta name="robots" content="noindex">') && !nf.includes('rel="canonical"'), '404: noindex yok ya da canonical var');
+    assert.ok(norm(nf).includes(norm(c.labels.notFound)), '404: "bulunamadı" yazısı yok');
     for (const p of ['index.html', '404.html', ...c.films.map((f) => `${f.slug}/index.html`)]) {
       const html = page(p);
       assert.ok(!/\sstyle=/.test(html), `${theme}/${p}: satır içi stil var (CSP engeller)`);
@@ -126,3 +137,15 @@ for (const theme of themes) {
     }
   });
 }
+
+test('yayın başlıkları ve Firebase adresinin ana adrese taşınması', () => {
+  const fb = JSON.parse(readFileSync(join(ROOT, 'firebase.json'), 'utf8'));
+  const h = Object.fromEntries(fb.hosting.headers.find((x) => x.source === '**').headers.map((x) => [x.key, x.value]));
+  // Firebase'in kendi değeri; daha kısası alt adları korumasız bırakır (camasirhanefilm.com tarama raporu).
+  assert.equal(h['Strict-Transport-Security'], 'max-age=31556926; includeSubDomains; preload');
+  for (const k of ['Content-Security-Policy', 'X-Content-Type-Options', 'Referrer-Policy', 'Permissions-Policy']) assert.ok(h[k], `${k} yok`);
+  assert.match(h['Content-Security-Policy'], /frame-ancestors 'none'/);
+  const js = readFileSync(join(ROOT, 'assets', 'main.js'), 'utf8');
+  assert.ok(js.includes(`location.replace(\`${c.site.url}\${location.pathname}`), 'web.app ziyaretçisi ana adrese taşınmıyor');
+  assert.ok(!/postMessage\([^)]*,\s*['"]\*['"]\)/.test(js), "postMessage hedefi '*'");
+});

@@ -44,4 +44,4 @@ Genel kurallar: https://github.com/toganio/agents/blob/main/AGENTS.md
 - Oturumda serbest kısa kontrol: `npm test` (derler + test eder, saniyeler sürer). Sunucu açılmaz;
   görsel kontrol önizleme kanalında yapılır.
 - Yayın: Firebase Hosting (kurulunca burada yazılır). Canlı adres: henüz yok (bkz. `DURUM.md`).
-- E-posta GoDaddy'de (MX secureserver.net); alan adı bağlanırken MX/SPF satırlarına dokunulmaz.
+- E-posta yok (Togan, 2026-11-01: "e-posta yok"). DNS GoDaddy'de; SPF `v=spf1 -all`, DMARC `p=reject` hedefi (bkz. `docs/evaluations/2026-11-01-sikilastirma.md`).

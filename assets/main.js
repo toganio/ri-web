@@ -1,5 +1,12 @@
 // Ortak davranışlar: tıklayınca yüklenen YouTube, fotoğraf büyütme, kaydırınca beliren öğeler, gişe sayacı, paralaks, arkada sessiz fragman.
 // Satır içi betik yok (CSP); her şey bu dosyada.
+// Firebase'in kendi adresleri (recepivedik.web.app ve .firebaseapp.com) aynı sayfayı ana adrese taşır.
+// Firebase bu adreslerde sunucu yönlendirmesine izin vermez; arama motorları için ayrıca her sayfada
+// canonical var. Önizleme kanallarının adresleri (recepivedik--…) etkilenmez.
+if (/^recepivedik\.(web\.app|firebaseapp\.com)$/.test(location.hostname)) {
+  location.replace(`https://recepivedik.com${location.pathname}${location.search}${location.hash}`);
+}
+
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -278,6 +278,7 @@ body.theme-seri { background: var(--bg); color: var(--ink); font: 400 17px/1.65 
 
 .nf { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px var(--pad); }
 .nf .mega { margin-top: 0; }
+.nf-msg { margin: 0 0 18px; font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); color: var(--bordo); }
 
 @media (max-width: 700px) { .hero .mega { font-size: 19vw; line-height: .95; margin-top: 30vh; } .hero .mega .w { display: block; }
   .hero-sub { font-size: 11px; letter-spacing: .2em; line-height: 1.8; } }

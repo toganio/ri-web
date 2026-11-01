@@ -187,6 +187,7 @@ ${footer(p)}`;
     return `${header(p)}
 <main id="icerik" class="nf">
   <h1 class="mega">404</h1>
+  <p class="nf-msg">${p.esc(p.labels.notFound)}</p>
   <p><a class="go" href="/">${p.esc(p.up(p.labels.home))} →</a></p>
 </main>
 ${footer(p)}`;

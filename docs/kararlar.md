@@ -80,3 +80,8 @@
 - 2026-11-01: Togan *"sitedeki tüm Box Office Türkiye linklerini kaldır"*. Ana sayfadaki kaynak satırı ve film sayfalarındaki
   "Kaynak: Box Office Türkiye" bağlantısı kaldırıldı; sayılar yerinde. Kaynak yalnız depoda (`tests/kaynak/`, bu dosya); test
   sitede bu bağlantının olmadığını da denetler.
+- 2026-11-01: Togan *"camasirhanefilm.com için yaptığımız güvenlik açık kapatmalarının hepsini bunlara da yapalım"*. Aynı
+  düzeltmeler uygulandı (`docs/evaluations/2026-11-01-sikilastirma.md`): HSTS Firebase değerine, web.app ziyaretçisi ana
+  adrese, 404 `noindex`. Alan adında CAA, SPF `-all`, DMARC `p=reject`, eski hosting satırları silinir.
+- 2026-11-01: Togan *"e-posta yok"*: recepivedik.com'da e-posta kullanılmıyor. Önceki "MX/SPF'e dokunulmaz" kuralı kalktı.
+

@@ -85,8 +85,12 @@ const parts = {
   },
 };
 
-function page({ title, description, body, path, bodyClass = '' }) {
+// noindex: 404 sayfası arama motorunda listelenmez, canonical taşımaz (camasirhanefilm.com tarama raporu, 2026-10-31).
+function page({ title, description, body, path, bodyClass = '', noindex = false }) {
   const canonical = `${c.site.url}${path}`;
+  const adres = noindex
+    ? '<meta name="robots" content="noindex">'
+    : `<link rel="canonical" href="${canonical}">`;
   return `<!doctype html>
 <html lang="tr">
 <head>
@@ -94,12 +98,11 @@ function page({ title, description, body, path, bodyClass = '' }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<link rel="canonical" href="${canonical}">
+${adres}
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="${canonical}">
-<meta name="theme-color" content="#fffaf2">
+${noindex ? '' : `<meta property="og:url" content="${canonical}">\n`}<meta name="theme-color" content="#fffaf2">
 ${theme.fonts || ''}
 <link rel="stylesheet" href="/assets/base.css?v=${VERSION}">
 <link rel="stylesheet" href="/assets/themes/${THEME}.css?v=${VERSION}">
@@ -141,7 +144,7 @@ for (const f of films) {
 }
 write(
   '404.html',
-  page({ title: `${c.labels.notFound} – ${c.site.title}`, description: c.site.description, path: '/404.html', body: theme.notFound(parts) }),
+  page({ title: `${c.labels.notFound} – ${c.site.title}`, description: c.site.description, path: '/404.html', body: theme.notFound(parts), noindex: true }),
 );
 write(
   'sitemap.xml',

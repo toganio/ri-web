@@ -4,7 +4,7 @@
     "public": "dist",
     "cleanUrls": false,
     "trailingSlash": true,
-    "ignore": ["firebase.json", "**/.*"],
+    "ignore": ["firebase.json", "**/.*", "_headers"],
     "headers": [
       {
         "source": "**",

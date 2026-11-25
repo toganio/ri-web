@@ -16,6 +16,9 @@ _Son güncelleme: 2026-11-01 18:25 (Türkiye saati) — claude.ai/code bulut otu
 ## Şu an açık iş
 - Sıkılaştırma PR'ı #5: HSTS, web.app → recepivedik.com taşıma, 404 `noindex`. Alan adı açıldı, birleştiriliyor.
 
+## Trafik (2026-11-25)
+- Firebase Spark projesi `camasirhanefilm-web` (3 site ortak) Kasım'da 8/10 GB indirme. Görseller WebP'ye çevrildi, görsel önbelleği 30 gün. Kalıcı çözüm seçenekleri: Blaze ya da Cloudflare (Togan'ın kararı).
+
 ## Sıradaki adım
 1. PR #5 yayınlanınca canlıda HSTS başlığı ve web.app taşıması ölçülür.
 2. GoDaddy DNS (Togan, adım adım): CAA `pki.goog` + `letsencrypt.org`; SPF `v=spf1 -all`; DMARC `_dmarc` `v=DMARC1; p=reject`;

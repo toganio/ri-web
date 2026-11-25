@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } fr
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { cfHeaders } from './cf-headers.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
@@ -154,5 +155,6 @@ ${['/', ...films.map(href)].map((p) => `  <url><loc>${c.site.url}${p}</loc></url
 </urlset>
 `,
 );
+write('_headers', cfHeaders(join(ROOT, 'firebase.json')));
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${c.site.url}/sitemap.xml\n`);
 console.log(`dist/ hazır: tasarım ${THEME}, ${films.length} film, sürüm ${VERSION}`);

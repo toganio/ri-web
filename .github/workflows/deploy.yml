@@ -67,3 +67,41 @@ jobs:
           # Önizleme adı tasarım seçimi sırasında "pr-N-seri" idi; adres değişmesin diye korunur.
           channelId: ${{ github.event_name == 'pull_request' && format('pr-{0}-seri', github.event.number) || 'live' }}
           expires: 7d
+
+  # Cloudflare Workers statik site (taşıma, Togan 2026-11-25). Firebase yayını alan adı Cloudflare'e geçene kadar sürer.
+  # Ayar wrangler.jsonc. Gereken sırlar: CLOUDFLARE_API_TOKEN ("Edit Cloudflare Workers" şablonu), CLOUDFLARE_ACCOUNT_ID.
+  # Sırlar yoksa atlanır. PR → pr-N-recepivedik.<hesap>.workers.dev önizlemesi, main → canlı.
+  cloudflare:
+    needs: test
+    if: >-
+      always() && needs.test.result != 'failure' && needs.test.result != 'cancelled' &&
+      github.event.pull_request.draft != true &&
+      (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    # Sır kullandığı için GitHub makinesinde kalır.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PR: ${{ github.event.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Derle
+        run: node scripts/build.mjs
+      - name: Cloudflare'e yükle
+        run: |
+          set -o pipefail
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::Cloudflare sırları yok, yükleme atlandı"; exit 0
+          fi
+          if [ "${{ github.event_name }}" = pull_request ]; then
+            # İlk kez: Worker henüz yoksa sürüm yüklenemez; önce bir kez kurulur (yalnız workers.dev adresinde, alan adı yok).
+            npx --yes wrangler@4 versions upload --preview-alias "pr-$PR" | tee cf.log \
+              || { npx --yes wrangler@4 deploy && npx --yes wrangler@4 versions upload --preview-alias "pr-$PR" | tee cf.log; }
+          else
+            npx --yes wrangler@4 deploy | tee cf.log
+          fi
+          grep -o 'https://[^ ]*workers.dev' cf.log | sort -u | sed 's/^/- /' >> "$GITHUB_STEP_SUMMARY"

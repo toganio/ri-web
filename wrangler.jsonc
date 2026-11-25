@@ -1,0 +1,13 @@
+// Cloudflare Workers statik site (Togan 2026-11-25: Cloudflare'e taşıma). Worker kodu yok, yalnız dist/.
+// Başlıklar dist/_headers'tan gelir (firebase.json'dan üretilir, scripts/cf-headers.mjs).
+{
+  "name": "recepivedik",
+  "compatibility_date": "2026-11-25",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

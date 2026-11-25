@@ -1,6 +1,6 @@
-// Cloudflare Pages için dist/_headers: başlıkların tek kaynağı firebase.json'dur, burada çevrilir.
+// Cloudflare (Workers statik site) için dist/_headers: başlıkların tek kaynağı firebase.json'dur, burada çevrilir.
 // "**" → "/*", "**/*.@(a|b)" → "/*.a" ve "/*.b". HTML için no-cache kuralı (regex) çevrilmez:
-// Cloudflare Pages varsayılanı zaten "public, max-age=0, must-revalidate".
+// Cloudflare varsayılanı HTML için zaten yeniden doğrulama ister.
 import { readFileSync } from 'node:fs';
 
 export function cfHeaders(firebaseJsonPath) {
